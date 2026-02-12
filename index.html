@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MWM Technologies · Global Infrastructure & Intelligence</title>
+  <title>MWM Technologies · Web</title>
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- Google Fonts: Inter + Space Grotesk for technical edge -->
+  <!-- Google Fonts: Inter + Space Grotesk -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     /* ---------- BRAND COLOURS – EXACT LOGO PALETTE ---------- */
@@ -41,7 +41,7 @@
       padding: 0 3rem;
     }
 
-    /* ---------- TYPOGRAPHY – business first, always ---------- */
+    /* ---------- TYPOGRAPHY ---------- */
     h1, h2, h3, h4 {
       font-weight: 700;
       letter-spacing: -0.02em;
@@ -99,7 +99,7 @@
       border-color: var(--mw-navy);
     }
 
-    /* ---------- HEADER – MWM dominates, no founder name in nav ---------- */
+    /* ---------- HEADER ---------- */
     header {
       background: rgba(255,255,255,0.92);
       backdrop-filter: blur(12px);
@@ -229,7 +229,7 @@
       100% { opacity: 1; }
     }
 
-    /* ---------- HERO – MWM TECHNOLOGIES dominates, no founder name ---------- */
+    /* ---------- HERO – WEB FOCUS ---------- */
     .hero-grid {
       display: grid;
       grid-template-columns: 1.2fr 1fr;
@@ -305,7 +305,7 @@
       font-family: 'Space Grotesk', sans-serif;
     }
 
-    /* ---------- SOLUTIONS GRID – core business ---------- */
+    /* ---------- SOLUTIONS GRID – WEBSITES ONLY ---------- */
     .solutions-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -342,7 +342,7 @@
       color: var(--mw-cyan);
     }
 
-    /* ---------- ABOUT PAGE – founder name belongs here, not on every page ---------- */
+    /* ---------- ABOUT PAGE – founder name ---------- */
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1.2fr;
@@ -373,22 +373,19 @@
       margin: 2rem 0;
     }
 
-    /* ---------- GLOBAL FOOTPRINT ---------- */
-    .global-grid {
+    /* ---------- WEBSITE SHOWCASE ---------- */
+    .showcase-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 2rem;
-      background: var(--mw-navy);
-      border-radius: 40px;
-      padding: 3rem;
-      color: white;
       margin: 3rem 0;
     }
 
-    .region-card {
-      padding: 1.5rem;
-      border: 1px solid rgba(0,180,216,0.2);
-      border-radius: 20px;
+    .showcase-item {
+      background: var(--mw-white);
+      border-radius: 24px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.02);
     }
 
     /* ---------- CONTACT ---------- */
@@ -429,7 +426,7 @@
       outline: none;
     }
 
-    /* ---------- FOOTER – MWM first, founder credit in about section only ---------- */
+    /* ---------- FOOTER ---------- */
     footer {
       background: var(--mw-navy);
       color: white;
@@ -447,13 +444,13 @@
     /* ---------- RESPONSIVE ---------- */
     @media (max-width: 1100px) {
       .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; }
-      .solutions-grid, .global-grid { grid-template-columns: 1fr 1fr; }
+      .solutions-grid, .showcase-grid { grid-template-columns: 1fr 1fr; }
       .footer-grid { grid-template-columns: 1fr 1fr; }
     }
 
     @media (max-width: 800px) {
       .container { padding: 0 1.5rem; }
-      .solutions-grid, .global-grid { grid-template-columns: 1fr; }
+      .solutions-grid, .showcase-grid { grid-template-columns: 1fr; }
       nav { flex-wrap: wrap; }
       h1 { font-size: 3.2rem; }
       h2 { font-size: 2.4rem; }
@@ -461,20 +458,20 @@
   </style>
 </head>
 <body>
-  <!-- HEADER – MWM TECHNOLOGIES dominates. No founder name in navigation. -->
+  <!-- HEADER -->
   <header>
     <nav>
       <div class="logo">
         <div class="logo-icon">MWM</div>
         <div>
           <span class="logo-text">MWM Technologies</span>
-          <span class="logo-descriptor">GLOBAL INFRASTRUCTURE</span>
+          <span class="logo-descriptor">WEB</span>
         </div>
       </div>
       <div class="nav-links">
         <a href="#" data-page="home" class="nav-link active">Home</a>
-        <a href="#" data-page="solutions" class="nav-link">Solutions</a>
-        <a href="#" data-page="global" class="nav-link">Global</a>
+        <a href="#" data-page="solutions" class="nav-link">Websites</a>
+        <a href="#" data-page="showcase" class="nav-link">Work</a>
         <a href="#" data-page="about" class="nav-link">About</a>
         <a href="#" data-page="contact" class="nav-link">Contact</a>
         <div class="lang-selector">
@@ -488,197 +485,151 @@
   </header>
 
   <main>
-    <!-- ############ HOME PAGE – MWM TECHNOLOGIES first. Founder not mentioned. ############ -->
+    <!-- HOME PAGE – WEB FOCUS -->
     <div id="page-home" class="page active-page">
       <div class="container">
         <div class="hero-grid">
           <div>
-            <span class="hero-tag"><i class="fas fa-bolt"></i> MWM TECHNOLOGIES</span>
-            <h1>Engineering the<br><span style="color: var(--mw-cyan);">global network</span></h1>
+            <span class="hero-tag"><i class="fas fa-code"></i> MWM WEB</span>
+            <h1>Websites that<br><span style="color: var(--mw-cyan);">work for you</span></h1>
             <p style="font-size: 1.3rem; margin: 1.5rem 0; color: #1E3A4E; max-width: 550px;">
-            Critical infrastructure. Distributed systems. Intelligence at the edge. MWM builds the architecture that powers enterprise, government, and industry.
+            Custom websites. Clean code. No page builders. No bloated themes. Just fast, secure, and built to convert.
             </p>
-            <div class="hero-stats">
-              <div class="stat-block">
-                <span class="stat-num">2.7B</span>
-                <span class="stat-label">ENDPOINTS</span>
-              </div>
-              <div class="stat-block">
-                <span class="stat-num">128</span>
-                <span class="stat-label">COUNTRIES</span>
-              </div>
-              <div class="stat-block">
-                <span class="stat-num">24/7</span>
-                <span class="stat-label">FOLLOW-THE-SUN</span>
-              </div>
-            </div>
             <div style="display: flex; gap: 1.5rem; margin-top: 2rem;">
-              <a href="#" data-page="solutions" class="btn nav-link">Explore solutions</a>
-              <a href="#" data-page="contact" class="btn btn-outline nav-link">Contact</a>
+              <a href="#" data-page="solutions" class="btn nav-link">See what we build</a>
+              <a href="#" data-page="contact" class="btn btn-outline nav-link">Start a project</a>
             </div>
           </div>
           <div class="hero-visual">
-            <i class="fas fa-circle-nodes"></i>
+            <i class="fas fa-code"></i>
             <i class="fas fa-globe" style="right: -20px; bottom: -20px; font-size: 14rem;"></i>
             <div style="position: relative; z-index: 2;">
-              <div class="global-pulse">MWM · GLOBAL NEXUS</div>
-              <p style="color: white; opacity: 0.9; font-size: 1.1rem; margin-top: 1rem;">Johannesburg · London · Singapore · São Paulo · Tokyo · Dubai</p>
+              <div class="global-pulse">&lt;MWM&gt;</div>
+              <p style="color: white; opacity: 0.9; font-size: 1.1rem; margin-top: 1rem;">Custom development · No templates · Performance first</p>
             </div>
           </div>
         </div>
-
-        <!-- Trust signals – enterprise clients -->
-        <div style="margin: 5rem 0 3rem;">
-          <p style="text-align: center; color: var(--mw-cyan); letter-spacing: 6px; font-size: 0.8rem; margin-bottom: 2rem;">TRUSTED BY GLOBAL ENTERPRISE</p>
-          <div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem; opacity: 0.7;">
-            <span style="font-size: 1.4rem; font-weight: 700;">STANDARD BANK</span>
-            <span style="font-size: 1.4rem; font-weight: 700;">DE BEERS</span>
-            <span style="font-size: 1.4rem; font-weight: 700;">VODACOM</span>
-            <span style="font-size: 1.4rem; font-weight: 700;">ANGLO AMERICAN</span>
-            <span style="font-size: 1.4rem; font-weight: 700;">MTN</span>
-          </div>
-        </div>
       </div>
     </div>
 
-    <!-- ############ SOLUTIONS PAGE – MWM's technical capabilities ############ -->
+    <!-- SOLUTIONS PAGE – WEBSITE SERVICES ONLY -->
     <div id="page-solutions" class="page">
       <div class="container">
-        <h1>Global <span>infrastructure</span></h1>
-        <p style="font-size: 1.3rem; max-width: 700px; margin-bottom: 2rem;">MWM delivers enterprise-grade systems across six core domains.</p>
+        <h1>What we <span>build</span></h1>
+        <p style="font-size: 1.3rem; max-width: 700px; margin-bottom: 2rem;">We focus on websites. Nothing else. Every project is hand-coded.</p>
         
         <div class="solutions-grid">
           <div class="solution-card">
-            <div class="solution-icon"><i class="fas fa-cloud"></i></div>
-            <h3>Cloud & edge</h3>
-            <p style="margin: 1rem 0; color: #2B4A5C;">Hybrid cloud, distributed edge, Kubernetes orchestration. 2.7B endpoints managed.</p>
-            <span style="color: var(--mw-cyan); font-weight: 600;">12 global regions →</span>
+            <div class="solution-icon"><i class="fas fa-browser"></i></div>
+            <h3>Business websites</h3>
+            <p style="margin: 1rem 0; color: #2B4A5C;">Clean, professional, responsive. Built to represent your brand and convert visitors into clients.</p>
           </div>
           <div class="solution-card">
-            <div class="solution-icon"><i class="fas fa-shield-haltered"></i></div>
-            <h3>Cyber security</h3>
-            <p style="margin: 1rem 0; color: #2B4A5C;">Zero trust architecture, threat intelligence, quantum-safe encryption. ISO 27001.</p>
-            <span style="color: var(--mw-cyan); font-weight: 600;">SOC2 · PCI →</span>
+            <div class="solution-icon"><i class="fas fa-cart-shopping"></i></div>
+            <h3>E‑commerce</h3>
+            <p style="margin: 1rem 0; color: #2B4A5C;">Custom online stores. Secure payments, inventory management, and a shopping experience that sells.</p>
           </div>
           <div class="solution-card">
-            <div class="solution-icon"><i class="fas fa-microchip"></i></div>
-            <h3>IoT & embedded</h3>
-            <p style="margin: 1rem 0; color: #2B4A5C;">Industrial IoT, telematics, smart infrastructure. 400+ deployments.</p>
-            <span style="color: var(--mw-cyan); font-weight: 600;">Mining · logistics →</span>
+            <div class="solution-icon"><i class="fas fa-newspaper"></i></div>
+            <h3>Content & publishing</h3>
+            <p style="margin: 1rem 0; color: #2B4A5C;">Magazines, blogs, media sites. Built for editors, readers, and scale.</p>
           </div>
           <div class="solution-card">
-            <div class="solution-icon"><i class="fas fa-brain"></i></div>
-            <h3>Artificial intelligence</h3>
-            <p style="margin: 1rem 0; color: #2B4A5C;">Computer vision, predictive maintenance, LLM fine-tuning. Custom models.</p>
-            <span style="color: var(--mw-cyan); font-weight: 600;">Industry-specific →</span>
+            <div class="solution-icon"><i class="fas fa-calendar"></i></div>
+            <h3>Booking platforms</h3>
+            <p style="margin: 1rem 0; color: #2B4A5C;">Appointment systems, event registration, membership portals. Custom workflows.</p>
           </div>
           <div class="solution-card">
-            <div class="solution-icon"><i class="fas fa-satellite"></i></div>
-            <h3>Telecom infrastructure</h3>
-            <p style="margin: 1rem 0; color: #2B4A5C;">5G core, Open RAN, satellite backhaul. Tier-1 operator partners.</p>
-            <span style="color: var(--mw-cyan); font-weight: 600;">Africa · LATAM →</span>
+            <div class="solution-icon"><i class="fas fa-building"></i></div>
+            <h3>Corporate sites</h3>
+            <p style="margin: 1rem 0; color: #2B4A5C;">For enterprises who need more than a template. Intranets, investor relations, internal tools.</p>
           </div>
           <div class="solution-card">
-            <div class="solution-icon"><i class="fas fa-chart-network"></i></div>
-            <h3>Enterprise systems</h3>
-            <p style="margin: 1rem 0; color: #2B4A5C;">ERP, CRM, legacy modernization, digital transformation. Fortune 500 clients.</p>
-            <span style="color: var(--mw-cyan); font-weight: 600;">SAP · Oracle →</span>
+            <div class="solution-icon"><i class="fas fa-database"></i></div>
+            <h3>Web applications</h3>
+            <p style="margin: 1rem 0; color: #2B4A5C;">Custom dashboards, client portals, data visualization. Built from scratch.</p>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- ############ GLOBAL PAGE – footprint, operations ############ -->
-    <div id="page-global" class="page">
+    <!-- SHOWCASE PAGE – PROJECTS (EMPTY FOR YOU TO FILL) -->
+    <div id="page-showcase" class="page">
       <div class="container">
-        <h1>Global <span>presence</span></h1>
-        <p style="font-size: 1.3rem; max-width: 700px; margin-bottom: 2rem;">128 countries · 19 permanent hubs · 2,800 engineers · 24/7 follow-the-sun</p>
+        <h1>Recent <span>work</span></h1>
+        <p style="font-size: 1.3rem; max-width: 700px; margin-bottom: 2rem;">Selected projects. Each one custom built.</p>
         
-        <div class="global-grid">
-          <div class="region-card">
-            <i class="fas fa-map-pin" style="color: var(--mw-cyan); font-size: 1.6rem;"></i>
-            <h3 style="color: white; margin: 0.8rem 0;">Africa</h3>
-            <p style="opacity: 0.8;">Johannesburg (HQ), Lagos, Nairobi, Cairo</p>
+        <div class="showcase-grid">
+          <div class="showcase-item">
+            <h3 style="color: var(--mw-cyan); margin-bottom: 0.5rem;">[ project name ]</h3>
+            <p style="color: #2B4A5C; margin-bottom: 1rem;">[ description ]</p>
+            <span style="color: var(--mw-navy); font-weight: 600;">HTML · CSS · JavaScript</span>
           </div>
-          <div class="region-card">
-            <i class="fas fa-map-pin" style="color: var(--mw-cyan); font-size: 1.6rem;"></i>
-            <h3 style="color: white; margin: 0.8rem 0;">Europe</h3>
-            <p style="opacity: 0.8;">London, Frankfurt, Stockholm, Paris</p>
+          <div class="showcase-item">
+            <h3 style="color: var(--mw-cyan); margin-bottom: 0.5rem;">[ project name ]</h3>
+            <p style="color: #2B4A5C; margin-bottom: 1rem;">[ description ]</p>
+            <span style="color: var(--mw-navy); font-weight: 600;">React · Node · MongoDB</span>
           </div>
-          <div class="region-card">
-            <i class="fas fa-map-pin" style="color: var(--mw-cyan);"></i>
-            <h3 style="color: white; margin: 0.8rem 0;">North America</h3>
-            <p style="opacity: 0.8;">New York, Toronto, San Francisco</p>
+          <div class="showcase-item">
+            <h3 style="color: var(--mw-cyan); margin-bottom: 0.5rem;">[ project name ]</h3>
+            <p style="color: #2B4A5C; margin-bottom: 1rem;">[ description ]</p>
+            <span style="color: var(--mw-navy); font-weight: 600;">WordPress · Custom theme</span>
           </div>
-          <div class="region-card">
-            <i class="fas fa-map-pin" style="color: var(--mw-cyan);"></i>
-            <h3 style="color: white; margin: 0.8rem 0;">South America</h3>
-            <p style="opacity: 0.8;">São Paulo, Buenos Aires, Bogotá</p>
-          </div>
-          <div class="region-card">
-            <i class="fas fa-map-pin" style="color: var(--mw-cyan);"></i>
-            <h3 style="color: white; margin: 0.8rem 0;">Asia Pacific</h3>
-            <p style="opacity: 0.8;">Singapore, Tokyo, Sydney, Mumbai</p>
-          </div>
-          <div class="region-card">
-            <i class="fas fa-map-pin" style="color: var(--mw-cyan);"></i>
-            <h3 style="color: white; margin: 0.8rem 0;">Middle East</h3>
-            <p style="opacity: 0.8;">Dubai, Riyadh, Doha</p>
+          <div class="showcase-item">
+            <h3 style="color: var(--mw-cyan); margin-bottom: 0.5rem;">[ project name ]</h3>
+            <p style="color: #2B4A5C; margin-bottom: 1rem;">[ description ]</p>
+            <span style="color: var(--mw-navy); font-weight: 600;">Vue · Laravel</span>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- ############ ABOUT PAGE – ONLY EDITED SECTION ############ -->
-    <!-- ############ EXACTLY AS REQUESTED – NO ADDED INFO, JUST YOUR NAMES AND MEANING ############ -->
+    <!-- ABOUT PAGE – EXACTLY WHAT YOU ASKED FOR -->
     <div id="page-about" class="page">
       <div class="container">
         <h1>About <span>MWM</span></h1>
-        <p style="font-size: 1.3rem; max-width: 700px; margin-bottom: 2rem;">Founded 2006. Privately held. Headquartered Johannesburg.</p>
+        <p style="font-size: 1.3rem; max-width: 700px; margin-bottom: 2rem;">Web development, founded 2006. Headquartered Johannesburg.</p>
         
         <div class="about-grid">
           <div class="about-card">
             <div class="name-mention">Ailwei Maduna Wa Malada</div>
-            <p style="font-size: 1.1rem; opacity: 0.9; margin-bottom: 1.5rem;">Founder & Chief Executive Officer</p>
+            <p style="font-size: 1.1rem; opacity: 0.9; margin-bottom: 1.5rem;">Founder</p>
             
-            <!-- ONLY WHAT YOU ASKED FOR: Maduna = mother's surname, Malada = father's surname -->
             <div class="heritage-box">
               <p style="margin-bottom: 0.8rem;"><strong style="color: var(--mw-cyan);">Maduna</strong> — my mother's surname.</p>
               <p><strong style="color: var(--mw-cyan);">Malada</strong> — my father's surname.</p>
             </div>
             
-            <!-- SIMPLE, CLEAN, NOTHING EXTRA -->
             <p style="font-style: italic; color: white;">MWM carries both names.</p>
           </div>
           
-          <!-- RIGHT COLUMN - COMPLETELY CLEAN, NO ADDED INFORMATION -->
           <div>
-            <h2 style="font-size: 2rem; margin-bottom: 1.2rem;">Legacy</h2>
+            <h2 style="font-size: 2rem; margin-bottom: 1.2rem;">We build websites</h2>
             <div style="margin-bottom: 1.8rem;">
-              <!-- EMPTY - YOU FILL WITH YOUR OWN INFORMATION -->
-              <p style="color: var(--mw-navy);">[ your description ]</p>
+              <p style="color: var(--mw-navy); font-size: 1.1rem; line-height: 1.6;">
+                No page builders. No template Frankensteins. We write code — HTML, CSS, JavaScript — and we do it well. 
+                Every project starts from zero and is built for your specific needs.
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- ############ CONTACT PAGE – enterprise contact ############ -->
+    <!-- CONTACT PAGE -->
     <div id="page-contact" class="page">
       <div class="container">
-        <h1>Contact <span>MWM</span></h1>
-        <p style="font-size: 1.3rem; max-width: 600px; margin-bottom: 2rem;">Direct access to our global team. Enterprise inquiries only.</p>
+        <h1>Start a <span>project</span></h1>
+        <p style="font-size: 1.3rem; max-width: 600px; margin-bottom: 2rem;">Tell us what you need. We'll respond within 24 hours.</p>
         
         <div class="contact-grid">
           <div class="contact-info">
-            <h3 style="color: white; font-size: 2rem; margin-bottom: 1.5rem;">MWM</h3>
-            <p style="margin-bottom: 1rem;"><i class="fas fa-map-pin" style="color: var(--mw-cyan); margin-right: 0.8rem;"></i> 27 Tech Avenue, Sandton, Johannesburg, 2196</p>
-            <p style="margin-bottom: 1rem;"><i class="fas fa-phone" style="color: var(--mw-cyan); margin-right: 0.8rem;"></i> +27 11 698 8324</p>
-            <p style="margin-bottom: 1rem;"><i class="fas fa-envelope" style="color: var(--mw-cyan); margin-right: 0.8rem;"></i> enterprise@mwmtechnologies.global</p>
-            <p style="margin-bottom: 1rem;"><i class="fas fa-clock" style="color: var(--mw-cyan); margin-right: 0.8rem;"></i> 24/7 follow-the-sun support</p>
+            <h3 style="color: white; font-size: 2rem; margin-bottom: 1.5rem;">MWM Web</h3>
+            <p style="margin-bottom: 1rem;"><i class="fas fa-map-pin" style="color: var(--mw-cyan); margin-right: 0.8rem;"></i> Johannesburg</p>
+            <p style="margin-bottom: 1rem;"><i class="fas fa-envelope" style="color: var(--mw-cyan); margin-right: 0.8rem;"></i> web@mwmtechnologies.com</p>
             <div style="display: flex; gap: 1.5rem; margin-top: 2.5rem;">
-              <i class="fab fa-linkedin-in" style="font-size: 1.8rem; color: white;"></i>
               <i class="fab fa-github" style="font-size: 1.8rem; color: white;"></i>
+              <i class="fab fa-linkedin-in" style="font-size: 1.8rem; color: white;"></i>
             </div>
           </div>
           
@@ -686,29 +637,29 @@
             <form id="contactForm">
               <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
                 <div class="form-group">
-                  <input type="text" placeholder="Full name" required>
+                  <input type="text" placeholder="Name" required>
                 </div>
                 <div class="form-group">
-                  <input type="email" placeholder="Email address" required>
+                  <input type="email" placeholder="Email" required>
                 </div>
               </div>
               <div class="form-group">
                 <select>
-                  <option>Inquiry type</option>
-                  <option>Enterprise infrastructure</option>
-                  <option>Cybersecurity</option>
-                  <option>Cloud & edge</option>
-                  <option>AI & data</option>
-                  <option>Telecom</option>
+                  <option>I need...</option>
+                  <option>Business website</option>
+                  <option>E‑commerce store</option>
+                  <option>Redesign</option>
+                  <option>Web application</option>
+                  <option>Other</option>
                 </select>
               </div>
               <div class="form-group">
-                <input type="text" placeholder="Company name">
+                <input type="text" placeholder="Company (optional)">
               </div>
               <div class="form-group">
-                <textarea rows="5" placeholder="Project requirements..."></textarea>
+                <textarea rows="5" placeholder="Tell us about your project..."></textarea>
               </div>
-              <button type="submit" class="btn" style="width: 100%; background: var(--mw-navy); color: white;">Send inquiry</button>
+              <button type="submit" class="btn" style="width: 100%; background: var(--mw-navy); color: white;">Send</button>
             </form>
           </div>
         </div>
@@ -716,46 +667,44 @@
     </div>
   </main>
 
-  <!-- FOOTER – MWM Technologies, no founder name. Founder credit only in About section. -->
+  <!-- FOOTER -->
   <footer>
     <div class="container">
       <div class="footer-grid">
         <div>
           <div style="display: flex; align-items: center; gap: 0.8rem;">
             <div class="logo-icon" style="background: var(--mw-cyan); color: var(--mw-navy);">MWM</div>
-            <span style="font-size: 1.6rem; font-weight: 800; color: white;">MWM Technologies</span>
+            <span style="font-size: 1.6rem; font-weight: 800; color: white;">MWM Web</span>
           </div>
-          <p style="margin-top: 1.2rem; color: #AADCE6; max-width: 300px;">Global infrastructure. Intelligence at scale.</p>
+          <p style="margin-top: 1.2rem; color: #AADCE6; max-width: 300px;">Custom websites. Clean code. No templates.</p>
+        </div>
+        <div>
+          <h4 style="color: white;">Work</h4>
+          <a href="#" data-page="solutions" class="nav-link" style="display: block; margin-top: 0.8rem; color: #AADCE6;">Websites</a>
+          <a href="#" data-page="showcase" class="nav-link" style="display: block; margin-top: 0.5rem; color: #AADCE6;">Projects</a>
         </div>
         <div>
           <h4 style="color: white;">Company</h4>
           <a href="#" data-page="about" class="nav-link" style="display: block; margin-top: 0.8rem; color: #AADCE6;">About</a>
-          <a href="#" data-page="solutions" class="nav-link" style="display: block; margin-top: 0.5rem; color: #AADCE6;">Solutions</a>
-          <a href="#" data-page="global" class="nav-link" style="display: block; margin-top: 0.5rem; color: #AADCE6;">Global</a>
-        </div>
-        <div>
-          <h4 style="color: white;">Regions</h4>
-          <p style="color: #AADCE6; margin-top: 0.8rem;">Africa · Europe · Americas · Asia · Middle East</p>
+          <a href="#" data-page="contact" class="nav-link" style="display: block; margin-top: 0.5rem; color: #AADCE6;">Contact</a>
         </div>
         <div>
           <h4 style="color: white;">Contact</h4>
-          <p style="color: #AADCE6; margin-top: 0.8rem;">enterprise@mwm.global</p>
-          <p style="color: #AADCE6;">+27 11 698 8324</p>
+          <p style="color: #AADCE6; margin-top: 0.8rem;">web@mwmtechnologies.com</p>
         </div>
       </div>
       <div style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 3rem; padding-top: 2rem; text-align: center; color: #AADCE6;">
-        <p>© 2026 MWM Technologies. All rights reserved.</p>
+        <p>© 2026 MWM Technologies · Web division</p>
       </div>
     </div>
   </footer>
 
   <script>
     (function() {
-      // Multi-page navigation
       const pages = {
         home: document.getElementById('page-home'),
         solutions: document.getElementById('page-solutions'),
-        global: document.getElementById('page-global'),
+        showcase: document.getElementById('page-showcase'),
         about: document.getElementById('page-about'),
         contact: document.getElementById('page-contact')
       };
@@ -783,7 +732,6 @@
         });
       });
 
-      // Language selector
       const langSpans = document.querySelectorAll('.lang-selector span');
       langSpans.forEach(span => {
         span.addEventListener('click', function() {
@@ -792,16 +740,14 @@
         });
       });
 
-      // Contact form
       const contactForm = document.getElementById('contactForm');
       if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
           e.preventDefault();
-          alert('Thank you. A member of our global team will respond within 12 hours.');
+          alert('Thank you. We will respond within 24 hours.');
         });
       }
 
-      // Hash handling
       const hash = window.location.hash.replace('#', '');
       if (hash && pages[hash]) activatePage(hash);
       else activatePage('home');
