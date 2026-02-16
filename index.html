@@ -2,14 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <title>MWM Technologies · responsive</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <title>MWM · reimagined</title>
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <!-- Google Fonts: Space Grotesk + Inter -->
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Google Font: Outfit (clean, modern) -->
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    /* reset & base */
+    /* reset */
     * {
       margin: 0;
       padding: 0;
@@ -17,381 +17,455 @@
     }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background: #F5FBFE;
-      color: #0A1A2E;
+      font-family: 'Outfit', sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
       line-height: 1.5;
-      overflow-x: hidden;
     }
 
-    .container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 4rem;
-    }
-
-    /* colors */
+    /* new color palette - fresh & bold */
     :root {
-      --navy: #0A1A2E;
-      --cyan: #00B4D8;
-      --teal: #005f7a;
-      --light-cyan: #E2F0F7;
-      --offwhite: #F5FBFE;
+      --deep: #0b1120;
+      --ink: #1e293b;
+      --neon: #3b82f6;
+      --neon-glow: #60a5fa;
+      --mist: #f1f5f9;
+      --pure: #ffffff;
+      --accent: #f97316; /* subtle orange accent */
     }
 
+    /* typography */
     h1, h2, h3, h4 {
-      font-family: 'Space Grotesk', sans-serif;
       font-weight: 700;
       letter-spacing: -0.02em;
     }
 
     h1 {
-      font-size: clamp(2.8rem, 8vw, 5rem);
-      line-height: 1;
-      background: linear-gradient(135deg, var(--navy), var(--teal));
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      margin-bottom: 1.5rem;
+      font-size: clamp(2.8rem, 8vw, 4.5rem);
+      line-height: 1.1;
+      color: var(--deep);
     }
 
-    /* header / nav — mobile first */
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    /* completely new header - minimal, bold logo */
     header {
-      background: rgba(255,255,255,0.95);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid rgba(0,180,216,0.15);
+      background: var(--pure);
+      border-bottom: 1px solid rgba(0,0,0,0.03);
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 50;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.02);
     }
 
     nav {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
-      max-width: 1600px;
+      justify-content: space-between;
+      padding: 1rem 1.5rem;
+      max-width: 1280px;
       margin: 0 auto;
-      gap: 1rem 0.5rem;
     }
 
-    /* --- BIGGER LOGO (and responsive) --- */
-    .logo-container {
+    /* BIG, BOLD LOGO - completely different treatment */
+    .logo-block {
       display: flex;
       align-items: center;
-      flex: 0 0 auto;
+      gap: 1rem;
     }
 
-    .logo-img {
-      height: 90px;            /* increased from 70px → bigger */
-      width: auto;
-      max-width: 100%;
-      display: block;
-      transition: height 0.2s;
+    .logo-mark {
+      width: 56px;
+      height: 56px;
+      background: linear-gradient(145deg, var(--deep), var(--ink));
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 10px 15px -5px rgba(59,130,246,0.3);
     }
 
-    /* navigation links — improved tap targets & mobile */
+    .logo-mark span {
+      color: white;
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      transform: scale(1.1);
+    }
+
+    .logo-text {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, var(--deep), var(--ink));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1;
+    }
+
+    .logo-text small {
+      font-size: 1rem;
+      font-weight: 400;
+      color: var(--ink);
+      opacity: 0.6;
+      margin-left: 0.3rem;
+    }
+
+    /* mobile-first navigation */
+    .nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      color: var(--deep);
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
     .nav-links {
       display: flex;
-      flex-wrap: wrap;
-      gap: 1.2rem 1.8rem;
-      align-items: center;
+      gap: 2.5rem;
     }
 
     .nav-links a {
-      color: var(--navy);
+      color: var(--ink);
       text-decoration: none;
       font-weight: 600;
-      font-size: 1.1rem;        /* slightly larger for touch */
+      font-size: 1.1rem;
       padding: 0.5rem 0;
-      position: relative;
-      white-space: nowrap;
+      border-bottom: 3px solid transparent;
+      transition: 0.2s;
     }
 
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--cyan);
-      transition: width 0.2s ease;
-    }
-
-    .nav-links a:hover::after,
-    .nav-links a.active::after {
-      width: 100%;
-    }
-
+    .nav-links a:hover,
     .nav-links a.active {
-      color: var(--cyan);
+      border-bottom-color: var(--neon);
+      color: var(--deep);
     }
 
     /* page system */
     .page {
       display: none;
-      padding: 3rem 0;
-      animation: fadeIn 0.4s ease;
+      padding: 3rem 0 5rem;
+      animation: slide 0.3s ease-out;
     }
 
     .page.active {
       display: block;
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes slide {
+      from { opacity: 0; transform: translateX(8px); }
+      to { opacity: 1; transform: translateX(0); }
     }
 
     /* buttons */
-    .btn {
+    .btn-primary {
       display: inline-block;
-      background: linear-gradient(135deg, var(--navy), var(--teal));
+      background: var(--deep);
       color: white;
-      padding: 1rem 2.2rem;
+      padding: 1rem 2.5rem;
       border-radius: 50px;
       text-decoration: none;
       font-weight: 600;
       font-size: 1.1rem;
-      transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 10px 20px -5px rgba(0,95,122,0.3);
-      cursor: pointer;
       border: none;
-      width: fit-content;
+      cursor: pointer;
+      transition: 0.2s;
+      box-shadow: 0 8px 20px -8px var(--deep);
     }
 
-    .btn:hover {
+    .btn-primary:hover {
+      background: var(--ink);
       transform: translateY(-2px);
-      box-shadow: 0 18px 25px -8px rgba(0,95,122,0.4);
     }
 
-    /* hero — responsive grid */
-    .hero {
+    .btn-outline {
+      display: inline-block;
+      background: transparent;
+      color: var(--deep);
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 2px solid var(--neon);
+      transition: 0.2s;
+    }
+
+    /* HOME - new layout */
+    .hero-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: 1fr 1fr;
       gap: 3rem;
       align-items: center;
     }
 
+    .hero-badge {
+      background: var(--mist);
+      color: var(--neon);
+      display: inline-block;
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 1.5rem;
+      border: 1px solid rgba(59,130,246,0.2);
+    }
+
     .hero-content p {
-      font-size: clamp(1.1rem, 3vw, 1.3rem);
-      color: #1e3e51;
-      margin: 1.5rem 0 2.5rem;
-      max-width: 600px;
+      font-size: 1.25rem;
+      color: #334155;
+      margin: 1.5rem 0 2rem;
+      max-width: 500px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 3rem;
+    }
+
+    .stat-item h3 {
+      font-size: 2rem;
+      color: var(--neon);
+      margin-bottom: 0.2rem;
     }
 
     .hero-visual {
-      background: linear-gradient(145deg, var(--navy), var(--teal));
-      border-radius: 40px;
-      padding: 3rem 2rem;
+      background: var(--deep);
+      border-radius: 48px;
+      padding: 3rem;
+      color: white;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 30px 50px -20px rgba(0,180,216,0.3);
+      min-height: 400px;
+      display: flex;
+      align-items: flex-end;
+      background-image: radial-gradient(circle at 30% 50%, rgba(59,130,246,0.2) 0%, transparent 50%);
     }
 
-    .hero-visual-content .mwm-large {
-      font-size: clamp(3.5rem, 10vw, 5rem);
-      font-weight: 800;
-      font-family: 'Space Grotesk', sans-serif;
-      line-height: 1;
-      margin-bottom: 0.5rem;
+    .hero-quote {
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      position: relative;
+      z-index: 2;
     }
 
-    .hero-visual-content .tech-large {
-      font-size: clamp(1.4rem, 4vw, 2rem);
-      font-weight: 600;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--cyan);
+    .hero-quote span {
+      color: var(--neon);
+      display: block;
+      font-size: 1.2rem;
+      font-weight: 400;
+      margin-top: 1rem;
+      opacity: 0.9;
     }
 
-    /* work page */
-    .work-header h2 {
-      font-size: clamp(2.5rem, 6vw, 3.5rem);
+    /* work cards - fresh look */
+    .section-title {
+      font-size: clamp(2rem, 5vw, 3rem);
+      margin-bottom: 3rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    .section-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 80px;
+      height: 4px;
+      background: var(--neon);
+      border-radius: 4px;
     }
 
     .work-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
     }
 
-    .work-card {
-      background: white;
-      border-radius: 30px;
+    .project-card {
+      background: var(--pure);
+      border-radius: 32px;
       padding: 2rem;
-      box-shadow: 0 15px 30px rgba(10,26,46,0.05);
-      transition: 0.2s;
-      border: 1px solid rgba(0,180,216,0.1);
-      height: 100%;
-      display: flex;
-      flex-direction: column;
+      box-shadow: 0 20px 30px -15px rgba(0,0,0,0.05);
+      border: 1px solid rgba(0,0,0,0.02);
+      transition: 0.25s ease;
     }
 
-    .work-card:hover {
-      transform: translateY(-5px);
-      border-color: var(--cyan);
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 25px 35px -12px var(--neon-glow);
     }
 
-    .work-icon {
-      width: 70px;
-      height: 70px;
-      background: linear-gradient(135deg, var(--navy), var(--teal));
-      border-radius: 20px;
+    .card-media {
+      width: 100%;
+      height: 180px;
+      background: var(--mist);
+      border-radius: 24px;
+      margin-bottom: 1.8rem;
       display: flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 1.5rem;
+      color: var(--neon);
+      font-size: 3rem;
     }
 
-    .work-icon i {
-      font-size: 2rem;
-      color: white;
+    .project-cat {
+      color: var(--neon);
+      font-weight: 600;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 1px;
     }
 
-    .work-card h3 {
+    .project-card h3 {
       font-size: 1.8rem;
-      margin-bottom: 0.3rem;
+      margin: 0.5rem 0 1rem;
     }
 
-    .work-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.6rem;
-      margin: 1rem 0;
-    }
-
-    /* about page — stacked on mobile */
-    .about-grid {
+    /* about page - fresh */
+    .about-showcase {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2.5rem;
-      background: white;
-      border-radius: 40px;
-      padding: clamp(2rem, 5vw, 4rem);
-      box-shadow: 0 25px 45px -15px rgba(0,95,122,0.15);
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      background: var(--pure);
+      border-radius: 48px;
+      padding: 3rem;
+      box-shadow: 0 25px 40px -20px rgba(0,0,0,0.1);
     }
 
-    .founder-card {
-      background: linear-gradient(145deg, var(--navy), var(--teal));
-      border-radius: 30px;
-      padding: 2.5rem 2rem;
-      color: white;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .founder-image {
-      width: 130px;
-      height: 130px;
-      border-radius: 50%;
-      border: 4px solid var(--cyan);
-      margin-bottom: 1.5rem;
-      object-fit: cover;
-      background: #ccc; /* fallback */
-    }
-
-    .founder-name {
-      font-size: clamp(1.8rem, 4vw, 2.5rem);
-      font-weight: 700;
-      line-height: 1.2;
-    }
-
-    .surname-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
-      margin: 2rem 0 1rem;
-    }
-
-    .surname-item {
-      flex: 1 1 160px;
-      padding: 1.2rem;
-      background: rgba(255,255,255,0.05);
-      border-radius: 16px;
-      border-left: 4px solid var(--cyan);
-    }
-
-    /* contact page */
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 2.5rem;
-      background: white;
-      border-radius: 40px;
-      padding: clamp(2rem, 5vw, 4rem);
-      box-shadow: 0 25px 45px -15px rgba(0,95,122,0.15);
-    }
-
-    .contact-info {
-      background: linear-gradient(145deg, var(--navy), var(--teal));
-      border-radius: 30px;
+    .founder-spotlight {
+      background: var(--deep);
+      border-radius: 36px;
       padding: 2.5rem;
       color: white;
     }
 
-    .contact-detail {
+    .founder-avatar {
+      width: 140px;
+      height: 140px;
+      background: var(--neon);
+      border-radius: 50%;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      font-weight: 800;
+      color: var(--deep);
+      border: 4px solid white;
+    }
+
+    .founder-avatar span {
+      background: white;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .name-rows {
+      display: flex;
+      gap: 1.5rem;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+
+    .name-tile {
+      background: rgba(255,255,255,0.1);
+      padding: 1.2rem;
+      border-radius: 20px;
+      flex: 1;
+      min-width: 120px;
+    }
+
+    .name-tile .label {
+      color: var(--neon);
+      font-weight: 700;
+      font-size: 1.2rem;
+    }
+
+    /* contact */
+    .contact-modern {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      background: var(--pure);
+      border-radius: 48px;
+      padding: 3rem;
+    }
+
+    .info-panel {
+      background: var(--mist);
+      border-radius: 36px;
+      padding: 2.5rem;
+    }
+
+    .contact-item {
       display: flex;
       align-items: center;
       gap: 1rem;
-      margin-bottom: 1.5rem;
-      word-break: break-word;
+      margin: 1.8rem 0;
+      font-size: 1.2rem;
     }
 
-    .contact-detail i {
-      width: 24px;
-      color: var(--cyan);
-      font-size: 1.3rem;
-      flex-shrink: 0;
+    .contact-item i {
+      width: 32px;
+      color: var(--neon);
+      font-size: 1.5rem;
     }
 
-    .whatsapp-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
+    .wa-btn {
       background: #25D366;
       color: white;
-      padding: 0.8rem 1.5rem;
-      border-radius: 40px;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      padding: 1rem 2rem;
+      border-radius: 60px;
       text-decoration: none;
       font-weight: 600;
-      width: fit-content;
+      margin-top: 1.5rem;
     }
 
-    .contact-form input,
-    .contact-form textarea {
+    .form-group input,
+    .form-group textarea {
       width: 100%;
-      padding: 1rem;
-      border: 2px solid var(--light-cyan);
-      border-radius: 16px;
-      margin-bottom: 1rem;
+      padding: 1.2rem;
+      border: 2px solid var(--mist);
+      border-radius: 24px;
       font-size: 1rem;
+      margin-bottom: 1rem;
+      background: var(--mist);
+      transition: 0.2s;
     }
 
-    .contact-form button {
-      background: linear-gradient(135deg, var(--navy), var(--teal));
-      color: white;
-      border: none;
-      padding: 1rem 2rem;
-      border-radius: 40px;
-      font-weight: 600;
-      font-size: 1.1rem;
-      cursor: pointer;
-      width: 100%;
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--neon);
+      background: var(--pure);
     }
 
     /* footer */
     footer {
-      background: linear-gradient(135deg, var(--navy), var(--teal));
+      background: var(--deep);
       color: white;
       padding: 3rem 0;
-      margin-top: 4rem;
-      border-radius: 60px 60px 0 0;
+      border-radius: 48px 48px 0 0;
+      margin-top: 5rem;
     }
 
-    .footer-content {
+    .footer-flex {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
@@ -403,119 +477,98 @@
       display: flex;
       align-items: center;
       gap: 1rem;
-      flex-wrap: wrap;
     }
 
-    .footer-logo img {
-      height: 50px;
-      filter: brightness(0) invert(1);
-    }
-
-    .footer-links {
+    .footer-mark {
+      width: 48px;
+      height: 48px;
+      background: var(--neon);
+      border-radius: 14px;
       display: flex;
-      flex-wrap: wrap;
-      gap: 1.5rem;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.6rem;
     }
 
-    .footer-links a {
-      color: white;
-      text-decoration: none;
-      opacity: 0.85;
-      font-size: 1.1rem;
-    }
-
-    /* ---------- RESPONSIVE TWEAKS (phone first) ---------- */
-    @media (max-width: 800px) {
-      .container {
-        padding: 0 1.8rem;
+    /* RESPONSIVE - phone first */
+    @media (max-width: 900px) {
+      .hero-grid,
+      .about-showcase,
+      .contact-modern {
+        grid-template-columns: 1fr;
       }
 
+      .hero-visual {
+        min-height: 280px;
+        order: -1;
+      }
+    }
+
+    @media (max-width: 700px) {
       nav {
-        padding: 0.8rem 1.5rem;
-        justify-content: center; /* center on small screens */
+        flex-wrap: wrap;
       }
 
-      .logo-img {
-        height: 80px;        /* still big, but adapts */
+      .nav-toggle {
+        display: block;
       }
 
       .nav-links {
-        gap: 1.2rem;
-        justify-content: center;
+        display: none;
         width: 100%;
-        order: 3;            /* below logo */
-        margin-top: 0.3rem;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1.5rem 0;
+        text-align: center;
+      }
+
+      .nav-links.show {
+        display: flex;
       }
 
       .nav-links a {
-        font-size: 1rem;
-        white-space: nowrap;
+        font-size: 1.3rem;
+        padding: 0.8rem;
       }
 
-      h1 {
-        font-size: clamp(2.4rem, 7vw, 4rem);
+      .logo-text {
+        font-size: 1.5rem;
+      }
+
+      .hero-stats {
+        flex-wrap: wrap;
+        gap: 1.5rem;
       }
     }
 
     @media (max-width: 480px) {
-      .logo-img {
-        height: 70px;        /* still larger than original 70? original was 70, we keep it big but not huge on very tiny screen */
+      .logo-mark {
+        width: 48px;
+        height: 48px;
       }
 
-      .nav-links {
-        gap: 1rem;
+      .logo-mark span {
+        font-size: 1.8rem;
       }
 
-      .nav-links a {
-        font-size: 0.95rem;
-        padding: 0.4rem 0;
+      .logo-text {
+        font-size: 1.3rem;
       }
 
-      .hero-visual {
-        padding: 2rem 1.5rem;
+      .container {
+        padding: 0 1.2rem;
       }
 
-      .work-card h3 {
-        font-size: 1.5rem;
-      }
-
-      .footer-content {
-        flex-direction: column;
+      .btn-primary {
+        width: 100%;
         text-align: center;
       }
-
-      .footer-links {
-        justify-content: center;
-      }
-
-      .surname-row {
-        flex-direction: column;
-      }
-
-      .contact-detail {
-        flex-wrap: wrap;
-      }
     }
 
-    /* handle very large screens – keep logo big */
-    @media (min-width: 1600px) {
-      .logo-img {
-        height: 110px;        /* even bigger on wide screens */
-      }
-    }
-
-    /* placeholder for missing images */
-    .founder-image[src="ar.png"]:not([src*="data"]) {
-      background: linear-gradient(145deg, #1e3e51, #0f2b38);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: bold;
-    }
-    .founder-image[src="ar.png"]:not([src*="data"])::after {
-      content: "A";
-      font-size: 3rem;
+    /* simple mobile menu toggle */
+    .show {
+      display: flex !important;
     }
   </style>
 </head>
@@ -523,12 +576,19 @@
 
 <header>
   <nav>
-    <div class="logo-container">
-      <!-- bigger logo: original logo.png used, height increased -->
-      <img src="logo.png" alt="MWM Technologies" class="logo-img" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22200%22%20height%3D%22200%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2245%22%20fill%3D%22%2300B4D8%22%2F%3E%3Ctext%20x%3D%2220%22%20y%3D%2268%22%20font-size%3D%2238%22%20fill%3D%22%230A1A2E%22%20font-family%3D%22Arial%22%3EMWM%3C%2Ftext%3E%3C%2Fsvg%3E';">
+    <div class="logo-block">
+      <div class="logo-mark">
+        <span>MWM</span>
+      </div>
+      <div class="logo-text">
+        technologies <small>est.2006</small>
+      </div>
     </div>
-    <div class="nav-links">
-      <a href="#" data-page="home">Home</a>
+    
+    <button class="nav-toggle" id="menuToggle">☰</button>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#" data-page="home" class="active">Home</a>
       <a href="#" data-page="work">Work</a>
       <a href="#" data-page="about">About</a>
       <a href="#" data-page="contact">Contact</a>
@@ -540,17 +600,29 @@
   <!-- HOME -->
   <div id="home" class="page active">
     <div class="container">
-      <div class="hero">
+      <div class="hero-grid">
         <div class="hero-content">
-          <h1>Building the<br>digital frontier</h1>
-          <p>Websites · applications · systems — engineered for performance, scale, and longevity. MWM Technologies delivers digital infrastructure that works as hard as you do.</p>
-          <button class="btn" onclick="showPage('work')">View our work</button>
+          <div class="hero-badge">✦ SINCE 2006</div>
+          <h1>Where code meets conviction</h1>
+          <p>We build digital infrastructure that lasts — websites, applications, and systems for the ambitious.</p>
+          <button class="btn-primary" onclick="showPage('work')">See our work</button>
+          
+          <div class="hero-stats">
+            <div class="stat-item">
+              <h3>100+</h3>
+              <p>Projects shipped</p>
+            </div>
+            <div class="stat-item">
+              <h3>0</h3>
+              <p>Templates used</p>
+            </div>
+          </div>
         </div>
+        
         <div class="hero-visual">
-          <div class="hero-visual-content">
-            <div class="mwm-large">MWM</div>
-            <div class="tech-large">TECHNOLOGIES</div>
-            <p style="margin-top: 2rem; font-size: 1.1rem; opacity: 0.9;">Custom development · No templates · Built to last</p>
+          <div class="hero-quote">
+            “Maduna Wa Malada”
+            <span>two names, one vision</span>
           </div>
         </div>
       </div>
@@ -560,35 +632,26 @@
   <!-- WORK -->
   <div id="work" class="page">
     <div class="container">
-      <div class="work-header">
-        <h2>OUR <span style="color: var(--cyan);">work</span></h2>
-        <p style="font-size: 1.2rem; color: #2e4a5b; max-width: 600px;">Every project is custom built from the ground up. No templates, no compromises.</p>
-      </div>
-      
+      <h2 class="section-title">Selected work</h2>
       <div class="work-grid">
-        <div class="work-card">
-          <div class="work-icon"><i class="fas fa-music"></i></div>
+        <div class="project-card">
+          <div class="card-media">
+            <i class="fas fa-headphones"></i>
+          </div>
+          <div class="project-cat">Music</div>
           <h3>Sunday Sermons MusiQ</h3>
-          <div class="category">Music label website</div>
-          <p>Artist profiles, music player, event listings, merchandise.</p>
-          <div class="work-tags">
-            <span class="work-tag">HTML/CSS</span>
-            <span class="work-tag">JavaScript</span>
-            <span class="work-tag">Music player</span>
-          </div>
-          <a href="#" class="visit-link" onclick="alert('Website coming soon'); return false;">Visit site <i class="fas fa-arrow-right"></i></a>
+          <p style="margin: 1rem 0;">Artist discovery, integrated player, merch store.</p>
+          <a href="#" class="btn-outline" onclick="alert('case study preview'); return false;">View project →</a>
         </div>
-        <div class="work-card">
-          <div class="work-icon"><i class="fas fa-record-vinyl"></i></div>
-          <h3>NLM Music Group Africa</h3>
-          <div class="category">Record label website</div>
-          <p>Artist roster, music releases, tour dates, press kit & fan engagement.</p>
-          <div class="work-tags">
-            <span class="work-tag">Custom CMS</span>
-            <span class="work-tag">E-commerce</span>
-            <span class="work-tag">Responsive</span>
+
+        <div class="project-card">
+          <div class="card-media">
+            <i class="fas fa-microphone-alt"></i>
           </div>
-          <a href="#" class="visit-link" onclick="alert('Website coming soon'); return false;">Visit site <i class="fas fa-arrow-right"></i></a>
+          <div class="project-cat">Record label</div>
+          <h3>NLM Music Group Africa</h3>
+          <p style="margin: 1rem 0;">Full CMS, tour dates, press &amp; roster management.</p>
+          <a href="#" class="btn-outline" onclick="alert('case study preview'); return false;">View project →</a>
         </div>
       </div>
     </div>
@@ -597,22 +660,30 @@
   <!-- ABOUT -->
   <div id="about" class="page">
     <div class="container">
-      <div class="about-grid">
-        <div class="founder-card">
-          <img src="ar.png" alt="Ailwei Maduna Wa Malada" class="founder-image" onerror="this.style.display='none'">
-          <div class="founder-name">Ailwei Maduna Wa Malada</div>
-          <div class="founder-title">FOUNDER</div>
-          <div class="surname-row">
-            <div class="surname-item"><div class="label">Maduna</div><div class="meaning">mother's surname</div></div>
-            <div class="surname-item"><div class="label">Malada</div><div class="meaning">father's surname</div></div>
+      <div class="about-showcase">
+        <div class="founder-spotlight">
+          <div class="founder-avatar">
+            <span>A</span>
           </div>
-          <div class="focus-tag">Currently focused on website development</div>
+          <h2 style="color: white; font-size: 2.5rem;">Ailwei Maduna Wa Malada</h2>
+          <p style="opacity: 0.8; margin: 1rem 0 2rem;">Founder · principal engineer</p>
+          
+          <div class="name-rows">
+            <div class="name-tile">
+              <div class="label">Maduna</div>
+              <div>mother's lineage</div>
+            </div>
+            <div class="name-tile">
+              <div class="label">Malada</div>
+              <div>father's lineage</div>
+            </div>
+          </div>
+          <div style="margin-top: 2rem; background: var(--neon); color: var(--deep); display: inline-block; padding: 0.5rem 1.5rem; border-radius: 40px; font-weight: 700;">Building since 2006</div>
         </div>
-        <div class="company-info">
-          <h2>MWM Technologies</h2>
-          <p>Founded 2006 · Privately held · Headquartered Johannesburg</p>
-          <div class="stat"><p>Building digital infrastructure for enterprise, government, and industry. Every line of code is written with purpose.</p></div>
-          <p style="margin-top: 2rem; font-style: italic; color: var(--teal);">"Maduna Wa Malada — two names, one vision."</p>
+        
+        <div style="padding: 2rem;">
+          <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">MWM Technologies</h2>
+          <p style="font-size: 1.2rem; color: #334155;">Headquartered in Johannesburg, privately held, and proudly independent. We don't do templates — we craft digital tools that work as hard as you do.</p>
         </div>
       </div>
     </div>
@@ -621,20 +692,24 @@
   <!-- CONTACT -->
   <div id="contact" class="page">
     <div class="container">
-      <h1 style="font-size: clamp(2.8rem, 7vw, 4rem); margin-bottom: 2rem;">Get in <span style="color: var(--cyan);">touch</span></h1>
-      <div class="contact-grid">
-        <div class="contact-info">
-          <h3>MWM Technologies</h3>
-          <div class="contact-detail"><i class="fas fa-envelope"></i> <a href="mailto:technologiesmwm@gmail.com">technologiesmwm@gmail.com</a></div>
-          <div class="contact-detail"><i class="fas fa-phone-alt"></i> <a href="tel:0813398293">081 339 8293</a></div>
-          <a href="https://wa.me/27813398293" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+      <h2 class="section-title">Reach out</h2>
+      <div class="contact-modern">
+        <div class="info-panel">
+          <h3 style="font-size: 2rem; margin-bottom: 1rem;">Let's talk</h3>
+          <div class="contact-item">
+            <i class="fas fa-envelope"></i> <a href="mailto:technologiesmwm@gmail.com" style="color: var(--deep); text-decoration: none;">technologiesmwm@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <i class="fas fa-phone"></i> <a href="tel:0813398293" style="color: var(--deep); text-decoration: none;">081 339 8293</a>
+          </div>
+          <a href="https://wa.me/27813398293" class="wa-btn"><i class="fab fa-whatsapp"></i> WhatsApp direct</a>
         </div>
-        <div class="contact-form">
-          <input type="text" placeholder="Your name" id="name">
-          <input type="email" placeholder="Email address" id="email">
-          <input type="text" placeholder="Company (optional)" id="company">
-          <textarea rows="5" placeholder="Tell us about your project" id="message"></textarea>
-          <button onclick="alert('Thank you for your inquiry. We will respond within 24 hours.')">Send inquiry</button>
+        
+        <div class="form-group">
+          <input type="text" placeholder="Your name">
+          <input type="email" placeholder="Email">
+          <textarea rows="4" placeholder="Tell us about your project"></textarea>
+          <button class="btn-primary" style="width: 100%;" onclick="alert('message received (demo)')">Send message</button>
         </div>
       </div>
     </div>
@@ -643,16 +718,15 @@
 
 <footer>
   <div class="container">
-    <div class="footer-content">
+    <div class="footer-flex">
       <div class="footer-logo">
-        <img src="logo.png" alt="MWM" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2250%22%20height%3D%2250%22%20viewBox%3D%220%200%20100%20100%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2245%22%20fill%3D%22%23ffffff%22%2F%3E%3Ctext%20x%3D%2220%22%20y%3D%2268%22%20font-size%3D%2238%22%20fill%3D%22%230A1A2E%22%3EMWM%3C%2Ftext%3E%3C%2Fsvg%3E';">
+        <div class="footer-mark">M</div>
         <span style="font-weight: 600;">MWM Technologies</span>
       </div>
-      <div class="footer-links">
-        <a href="#" data-page="home">Home</a>
-        <a href="#" data-page="work">Work</a>
-        <a href="#" data-page="about">About</a>
-        <a href="#" data-page="contact">Contact</a>
+      <div style="display: flex; gap: 2rem;">
+        <a href="#" data-page="home" style="color: white; text-decoration: none;">Home</a>
+        <a href="#" data-page="work" style="color: white; text-decoration: none;">Work</a>
+        <a href="#" data-page="contact" style="color: white; text-decoration: none;">Contact</a>
       </div>
       <div>© 2026</div>
     </div>
@@ -660,6 +734,7 @@
 </footer>
 
 <script>
+  // page navigation
   const pages = {
     home: document.getElementById('home'),
     work: document.getElementById('work'),
@@ -667,42 +742,43 @@
     contact: document.getElementById('contact')
   };
 
-  const links = document.querySelectorAll('.nav-links a, .footer-links a');
+  const navLinks = document.querySelectorAll('.nav-links a, footer a[data-page]');
 
   function showPage(pageId) {
     Object.values(pages).forEach(p => p?.classList.remove('active'));
     if (pages[pageId]) pages[pageId].classList.add('active');
     
-    links.forEach(link => {
+    navLinks.forEach(link => {
       link.classList.remove('active');
       if (link.dataset.page === pageId) link.classList.add('active');
     });
 
+    // close mobile menu if open
+    document.getElementById('navLinks').classList.remove('show');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
-  links.forEach(link => {
+  navLinks.forEach(link => {
     link.addEventListener('click', (e) => {
       e.preventDefault();
-      showPage(link.dataset.page);
+      if (link.dataset.page) showPage(link.dataset.page);
     });
   });
 
-  document.querySelector('.btn')?.addEventListener('click', (e) => {
+  // mobile toggle
+  document.getElementById('menuToggle').addEventListener('click', () => {
+    document.getElementById('navLinks').classList.toggle('show');
+  });
+
+  // ensure home active if none
+  if (!document.querySelector('.page.active')) showPage('home');
+
+  // work buttons
+  document.querySelector('.btn-primary')?.addEventListener('click', (e) => {
     e.preventDefault();
     showPage('work');
   });
-
-  document.querySelectorAll('.visit-link').forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      alert('Website coming soon');
-    });
-  });
-
-  // default to home if none active (ensured)
-  if (!document.querySelector('.page.active')) showPage('home');
 </script>
-<!-- note: logo is now bigger (90px base) and entire layout stacks nicely on phones -->
+
 </body>
 </html>
