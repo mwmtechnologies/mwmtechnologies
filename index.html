@@ -193,6 +193,11 @@
       transition: 0.2s;
     }
 
+    .btn-outline:hover {
+      background: var(--neon);
+      color: white;
+    }
+
     /* HOME - new layout */
     .hero-grid {
       display: grid;
@@ -471,6 +476,10 @@
       word-break: break-word;
     }
 
+    .contact-item a:hover {
+      color: var(--neon);
+    }
+
     .wa-btn {
       background: #25D366;
       color: white;
@@ -482,6 +491,12 @@
       text-decoration: none;
       font-weight: 600;
       margin-top: 1.5rem;
+      transition: 0.2s;
+    }
+
+    .wa-btn:hover {
+      background: #128C7E;
+      transform: translateY(-2px);
     }
 
     .form-group input,
@@ -501,6 +516,23 @@
       outline: none;
       border-color: var(--neon);
       background: var(--pure);
+    }
+
+    .submit-btn {
+      background: var(--deep);
+      color: white;
+      border: none;
+      padding: 1.2rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: 0.2s;
+      width: 100%;
+    }
+
+    .submit-btn:hover {
+      background: var(--neon);
     }
 
     /* footer */
@@ -638,7 +670,7 @@
         <img src="logo.png" alt="MWM Technologies" class="logo-img" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2270%22%20height%3D%2270%22%20viewBox%3D%220%200%20100%20100%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20fill%3D%22%233b82f6%22%20rx%3D%2220%22%2F%3E%3Ctext%20x%3D%2218%22%20y%3D%2268%22%20font-size%3D%2242%22%20fill%3D%22white%22%20font-family%3D%22Arial%22%3EMWM%3C%2Ftext%3E%3C%2Fsvg%3E';">
       </div>
       <div class="logo-text">
-        NWM Technologies <small>est.2026</small>
+        MWM Technologies <small>est.2026</small>
       </div>
     </div>
     
@@ -669,15 +701,11 @@
               <h3>3</h3>
               <p>Projects shipped</p>
             </div>
-            <div class="stat-item">
-            
-            </div>
           </div>
         </div>
         
         <div class="hero-visual">
           <div class="hero-quote">
-            ar.png
             “Maduna Wa Malada”
             <span>two names, one vision</span>
           </div>
@@ -693,37 +721,32 @@
       <div class="work-grid">
         <div class="project-card">
           <div class="project-image">
-            <!-- Project image placeholder - you can replace with actual project screenshots -->
             <img src="1.png" alt="Sunday Sermons MusiQ Podcast" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-music\' style=\'font-size: 3rem; color: #3b82f6;\'></i><span style=\'margin-left: 0.5rem;\'>Sunday Sermons</span>';">
-          http://www.sundaysermonsmusiq.co.za/#
           </div>
           <div class="project-cat">Podcast</div>
           <h3>Sunday Sermons MusiQ</h3>
-          <p style="margin: 1rem 0;"Where producers take the decks. Hosted by Ailwei Maduna Wa Malada, this series showcases a different artist each Sunday, each presenting a mix composed entirely of their own production music. Dive deep into the authentic, unfiltered sound of the creator.</p>
+          <p style="margin: 1rem 0;">Where producers take the decks. Hosted by Ailwei Maduna Wa Malada, this series showcases a different artist each Sunday, each presenting a mix composed entirely of their own production music. Dive deep into the authentic, unfiltered sound of the creator.</p>
           <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 1rem 0;">
             <span style="background: var(--mist); padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.9rem;">HTML/CSS</span>
             <span style="background: var(--mist); padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.9rem;">JavaScript</span>
             <span style="background: var(--mist); padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.9rem;">Music player</span>
           </div>
-          <a href="#" class="btn-outline" onclick="alert('Website coming soon'); return false;">Visit site →</a>
+          <a href="http://www.sundaysermonsmusiq.co.za/#" target="_blank" class="btn-outline">Visit site →</a>
         </div>
 
         <div class="project-card">
           <div class="project-image">
-            <!-- Project image placeholder -->
             <img src="2.png" alt="NLM Music Group Africa" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-record-vinyl\' style=\'font-size: 3rem; color: #3b82f6;\'></i><span>NLM Music</span>';">
-          https://www.nlmmusicgroupafrica.co.za/#home
-            A premier music label dedicated to discovering and nurturing African musical talent, providing a platform for artists to share their unique sounds with the world.
           </div>
           <div class="project-cat">Record label</div>
           <h3>NLM Music Group Africa</h3>
-          <p style="margin: 1rem 0;"></p>
+          <p style="margin: 1rem 0;">A premier music label dedicated to discovering and nurturing African musical talent, providing a platform for artists to share their unique sounds with the world.</p>
           <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 1rem 0;">
             <span style="background: var(--mist); padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.9rem;">Custom CMS</span>
             <span style="background: var(--mist); padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.9rem;">E-commerce</span>
             <span style="background: var(--mist); padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.9rem;">Responsive</span>
           </div>
-          <a href="#" class="btn-outline" onclick="alert('Website coming soon'); return false;">Visit site →</a>
+          <a href="https://www.nlmmusicgroupafrica.co.za/#home" target="_blank" class="btn-outline">Visit site →</a>
         </div>
       </div>
     </div>
@@ -792,7 +815,19 @@
           </a>
         </div>
         
-       
+        <div class="form-panel">
+          <form action="mailto:technologiesmwm@gmail.com" method="post" enctype="text/plain">
+            <div class="form-group">
+              <input type="text" name="name" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" placeholder="Email address" required>
+            </div>
+            <div class="form-group">
+              <textarea name="message" rows="5" placeholder="Tell us about your project..." required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send message</button>
+          </form>
         </div>
       </div>
     </div>
@@ -863,12 +898,10 @@
     showPage('work');
   });
 
-  // visit links
-  document.querySelectorAll('.btn-outline').forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      alert('Website coming soon');
-    });
+  // handle form submission
+  document.querySelector('form')?.addEventListener('submit', function(e) {
+    // Let the form submit normally to mailto
+    // This will open the user's default email client
   });
 </script>
 
