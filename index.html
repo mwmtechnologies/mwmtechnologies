@@ -323,6 +323,46 @@
     .contact-info p {
       color: #4a5565;
       margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .contact-info i {
+      color: #0066cc;
+      width: 24px;
+      font-size: 1.2rem;
+    }
+
+    .contact-info a {
+      color: #4a5565;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-info a:hover {
+      color: #0066cc;
+    }
+
+    .whatsapp-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: #25D366;
+      color: white !important;
+      padding: 0.5rem 1rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+    }
+
+    .whatsapp-link i {
+      color: white !important;
+    }
+
+    .whatsapp-link:hover {
+      background: #128C7E;
+      color: white !important;
     }
 
     .contact-form input,
@@ -479,15 +519,19 @@
     </div>
   </div>
 
-  <!-- contact -->
+  <!-- contact – with your contact details -->
   <div id="contact" class="page">
     <div class="container">
       <h1 style="font-size: 3rem; margin-bottom: 2rem;">get in <span style="color: #0066cc;">touch</span></h1>
       <div class="contact-grid">
         <div class="contact-info">
           <h3>mwm technologies</h3>
-          <p>johannesburg</p>
-          <p>contact@mwm.tech</p>
+          <p><i class="fas fa-envelope"></i> <a href="mailto:technologiesmwm@gmail.com">technologiesmwm@gmail.com</a></p>
+          <p><i class="fas fa-phone-alt"></i> <a href="tel:0813398293">081 339 8293</a></p>
+          <p><i class="fab fa-whatsapp"></i> <a href="https://wa.me/27813398293" target="_blank">081 339 8293 (WhatsApp)</a></p>
+          <a href="https://wa.me/27813398293" target="_blank" class="whatsapp-link">
+            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+          </a>
         </div>
         <div class="contact-form">
           <input type="text" placeholder="name">
