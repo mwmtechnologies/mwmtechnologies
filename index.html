@@ -32,7 +32,6 @@
       --mist: #f1f5f9;
       --pure: #ffffff;
       --accent: #f97316;
-      --subtle-shadow: 0 20px 30px -15px rgba(0,0,0,0.05);
     }
 
     /* typography */
@@ -199,7 +198,7 @@
       color: white;
     }
 
-    /* HOME - new layout + founder highlight (ar.png above Ailwei) */
+    /* HOME - new layout + founder highlight */
     .hero-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -297,7 +296,7 @@
       background: var(--pure);
       border-radius: 32px;
       padding: 2rem;
-      box-shadow: var(--subtle-shadow);
+      box-shadow: 0 20px 30px -15px rgba(0,0,0,0.05);
       border: 1px solid rgba(0,0,0,0.02);
       transition: 0.25s ease;
     }
@@ -581,42 +580,6 @@
       opacity: 1;
     }
 
-    /* tiny new touches — fresh but not overdone */
-    .pill-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin: 1rem 0;
-    }
-    .pill-list span {
-      background: var(--mist);
-      padding: 0.3rem 1rem;
-      border-radius: 40px;
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-    .testimonial-note {
-      border-top: 2px solid var(--mist);
-      margin-top: 2rem;
-      padding-top: 1.5rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      font-style: italic;
-    }
-    .testimonial-note i {
-      color: var(--neon);
-      font-size: 2rem;
-    }
-    .service-tag {
-      background: rgba(59,130,246,0.1);
-      border-radius: 30px;
-      padding: 1.5rem;
-      margin: 1.5rem 0;
-      border-left: 3px solid var(--neon);
-      font-size: 1.05rem;
-    }
-
     /* RESPONSIVE */
     @media (max-width: 900px) {
       .hero-grid,
@@ -723,38 +686,28 @@
 </header>
 
 <main>
-  <!-- HOME (subtle additions: intro text + mini service tag) -->
+  <!-- HOME -->
   <div id="home" class="page active">
     <div class="container">
       <div class="hero-grid">
         <div class="hero-content">
           <div class="hero-badge">✦ SINCE 2026</div>
-          <!-- ar.png above Ailwei Maduna Wa Malada -->
+          <!-- **** LOGO ADDED ABOVE Ailwei Maduna Wa Malada as requested **** -->
           <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem;">
+            <!-- Logo added here above the name -->
             <div style="width: 50px; height: 50px; border-radius: 50%; overflow: hidden; border: 2px solid var(--neon); background: var(--mist);">
-              <img src="ar.png" alt="founder" style="width:100%; height:100%; object-fit:cover;" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-user\' style=\'font-size: 1.5rem; color: var(--neon); width:100%; height:100%; display:flex; align-items:center; justify-content:center;\'></i>';">
+              <img src="logo.png" alt="MWM Logo" style="width:100%; height:100%; object-fit:cover;" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-crown\' style=\'font-size: 1.5rem; color: var(--neon); width:100%; height:100%; display:flex; align-items:center; justify-content:center;\'></i>';">
             </div>
             <span style="font-weight: 600; color: var(--deep);">Ailwei Maduna Wa Malada</span>
           </div>
           <h1>Building the digital frontier</h1>
           <p>Websites · applications · systems — engineered for performance, scale, and longevity. MWM Technologies delivers digital infrastructure that works as hard as you do.</p>
-          <!-- subtle extra: core focus note -->
-          <div class="pill-list" style="margin-bottom: 1.8rem;">
-            <span>✨ full‑stack development</span>
-            <span>⚡ cloud ready</span>
-            <span>📱 mobile first</span>
-          </div>
           <button class="btn-primary" onclick="showPage('work')">View our work</button>
           
           <div class="hero-stats">
             <div class="stat-item">
               <h3>3</h3>
               <p>Projects shipped</p>
-            </div>
-            <!-- tiny addition: a second stat (smoothed) -->
-            <div class="stat-item">
-              <h3>100%</h3>
-              <p>client satisfaction</p>
             </div>
           </div>
         </div>
@@ -766,16 +719,10 @@
           </div>
         </div>
       </div>
-
-      <!-- tiny new block: a quick testament (doesn't overload) -->
-      <div class="testimonial-note" style="max-width: 700px; margin: 3rem auto 0 auto;">
-        <i class="fas fa-quote-right"></i>
-        <span>“They don't just write code — they build partnerships. Our platform has never been more solid.” — early client</span>
-      </div>
     </div>
   </div>
 
-  <!-- WORK (same great projects, just a tiny extra detail) -->
+  <!-- WORK  -->
   <div id="work" class="page">
     <div class="container">
       <h2 class="section-title">Our work</h2>
@@ -787,12 +734,12 @@
           <div class="project-cat">Podcast</div>
           <h3>Sunday Sermons MusiQ</h3>
           <p style="margin: 1rem 0;">Where producers take the decks. Hosted by Ailwei Maduna Wa Malada, this series showcases a different artist each Sunday, each presenting a mix composed entirely of their own production music. Dive deep into the authentic, unfiltered sound of the creator.</p>
-          <div class="pill-list">
-            <span>HTML/CSS</span>
-            <span>JavaScript</span>
-            <span>Music player</span>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 1rem 0;">
+            <span style="background: var(--mist); padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.9rem;">HTML/CSS</span>
+            <span style="background: var(--mist); padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.9rem;">JavaScript</span>
+            <span style="background: var(--mist); padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.9rem;">Music player</span>
           </div>
-          <a href="http://www.sundaysermonsmusiq.co.za/#" target="_blank" class="btn-outline" style="margin-top: 1rem;">Visit site →</a>
+          <a href="http://www.sundaysermonsmusiq.co.za/#" target="_blank" class="btn-outline">Visit site →</a>
         </div>
 
         <div class="project-card">
@@ -802,20 +749,18 @@
           <div class="project-cat">Record label</div>
           <h3>NLM Music Group Africa</h3>
           <p style="margin: 1rem 0;">A premier music label dedicated to discovering and nurturing African musical talent, providing a platform for artists to share their unique sounds with the world.</p>
-          <div class="pill-list">
-            <span>Custom CMS</span>
-            <span>E‑commerce</span>
-            <span>Responsive</span>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 1rem 0;">
+            <span style="background: var(--mist); padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.9rem;">Custom CMS</span>
+            <span style="background: var(--mist); padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.9rem;">E-commerce</span>
+            <span style="background: var(--mist); padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.9rem;">Responsive</span>
           </div>
-          <a href="https://www.nlmmusicgroupafrica.co.za/#home" target="_blank" class="btn-outline" style="margin-top: 1rem;">Visit site →</a>
+          <a href="https://www.nlmmusicgroupafrica.co.za/#home" target="_blank" class="btn-outline">Visit site →</a>
         </div>
       </div>
-      <!-- a light extra: upcoming note (still minimal) -->
-      <p style="text-align: center; margin-top: 3rem; color: #475569;"><i class="fas fa-arrow-down" style="color: var(--neon);"></i> more projects in the pipeline — stay tuned</p>
     </div>
   </div>
 
-  <!-- ABOUT - WITH YOUR FOUNDER IMAGE RESTORED + extra touch: a short service line -->
+  <!-- ABOUT - WITH YOUR FOUNDER IMAGE RESTORED -->
   <div id="about" class="page">
     <div class="container">
       <div class="about-showcase">
@@ -839,10 +784,6 @@
           </div>
           
           <div class="focus-badge">Currently focused on website development</div>
-          <!-- small addition: social / philosophy (light) -->
-          <div style="margin-top: 2rem; font-size: 1rem; opacity: 0.8;">
-            <i class="fas fa-code"></i> clean code · strong roots
-          </div>
         </div>
         
         <div class="company-info">
@@ -852,10 +793,6 @@
           <div class="founding-stat">
             <p style="font-size: 1.1rem;">Building digital infrastructure for enterprise, government, and industry. Every line of code is written with purpose.</p>
           </div>
-          <!-- extra flavour: a short service line (still minimal) -->
-          <div class="service-tag">
-            <i class="fas fa-check-circle" style="color: var(--neon);"></i> end‑to‑end development: from concept to deployment.
-          </div>
           
           <p style="margin-top: 2rem; font-style: italic; color: var(--neon); font-weight: 500;">"Maduna Wa Malada — two names, one vision."</p>
         </div>
@@ -863,7 +800,7 @@
     </div>
   </div>
 
-  <!-- CONTACT (refined with a tiny extra hint) -->
+  <!-- CONTACT -->
   <div id="contact" class="page">
     <div class="container">
       <h2 class="section-title">Get in touch</h2>
@@ -884,9 +821,6 @@
           <a href="https://wa.me/27813398293" target="_blank" class="wa-btn">
             <i class="fab fa-whatsapp"></i> Chat on WhatsApp
           </a>
-
-          <!-- minimal extra: response time note -->
-          <p style="margin-top: 2rem; font-size: 0.95rem; color: #334155;"><i class="far fa-clock" style="color: var(--neon);"></i> usually replies within a few hours</p>
         </div>
         
         <div class="form-panel">
@@ -902,8 +836,6 @@
             </div>
             <button type="submit" class="submit-btn">Send message</button>
           </form>
-          <!-- tiny note: email client opens -->
-          <p style="font-size: 0.85rem; margin-top: 1rem; color: #64748b;"><i class="fas fa-envelope-open-text"></i> your default mail app will open</p>
         </div>
       </div>
     </div>
@@ -974,9 +906,10 @@
     showPage('work');
   });
 
-  // handle form submission (keep default)
+  // handle form submission
   document.querySelector('form')?.addEventListener('submit', function(e) {
     // Let the form submit normally to mailto
+    // This will open the user's default email client
   });
 </script>
 
