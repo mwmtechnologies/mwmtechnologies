@@ -58,15 +58,27 @@
       margin: 0 auto;
     }
 
-    .logo {
-      font-size: 1.8rem;
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .logo-img {
+      height: 40px;
+      width: auto;
+      display: block;
+    }
+
+    .logo-text {
+      font-size: 1.6rem;
       font-weight: 700;
       font-family: 'Space Grotesk', sans-serif;
       color: #0b1c2f;
       letter-spacing: -0.02em;
     }
 
-    .logo span {
+    .logo-text span {
       color: #0066cc;
     }
 
@@ -128,6 +140,16 @@
     .founder-section {
       border-right: 1px solid #e0e8f0;
       padding-right: 3rem;
+    }
+
+    .founder-image {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1.5rem;
+      border: 3px solid white;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
 
     .founder-name {
@@ -367,7 +389,10 @@
 
 <header>
   <nav>
-    <div class="logo">MWM <span>technologies</span></div>
+    <div class="logo-container">
+      <img src="logo.png" alt="MWM Technologies" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+      <span class="logo-text" style="display: none;">MWM <span>technologies</span></span>
+    </div>
     <div class="nav-links">
       <a href="#" data-page="home">home</a>
       <a href="#" data-page="work">work</a>
@@ -415,7 +440,7 @@
     </div>
   </div>
 
-  <!-- about – exactly as requested, clean and professional -->
+  <!-- about – with founder image -->
   <div id="about" class="page">
     <div class="container">
       <div class="about-header">
@@ -424,6 +449,7 @@
       
       <div class="about-grid">
         <div class="founder-section">
+          <img src="ar.png" alt="Ailwei Maduna Wa Malada" class="founder-image" onerror="this.style.display='none';">
           <div class="founder-name">Ailwei Maduna Wa Malada</div>
           <div class="founder-title">founder</div>
           
@@ -484,6 +510,23 @@
 </footer>
 
 <script>
+  // handle image fallback
+  window.addEventListener('load', function() {
+    const logoImg = document.querySelector('.logo-img');
+    const logoText = document.querySelector('.logo-text');
+    
+    if (logoImg && logoImg.naturalWidth === 0) {
+      logoImg.style.display = 'none';
+      if (logoText) logoText.style.display = 'block';
+    }
+    
+    const founderImg = document.querySelector('.founder-image');
+    if (founderImg && founderImg.naturalWidth === 0) {
+      founderImg.style.display = 'none';
+    }
+  });
+
+  // navigation
   const pages = {
     home: document.getElementById('home'),
     work: document.getElementById('work'),
