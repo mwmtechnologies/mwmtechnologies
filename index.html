@@ -61,25 +61,12 @@
     .logo-container {
       display: flex;
       align-items: center;
-      gap: 0.75rem;
     }
 
     .logo-img {
-      height: 40px;
+      height: 60px;
       width: auto;
       display: block;
-    }
-
-    .logo-text {
-      font-size: 1.6rem;
-      font-weight: 700;
-      font-family: 'Space Grotesk', sans-serif;
-      color: #0b1c2f;
-      letter-spacing: -0.02em;
-    }
-
-    .logo-text span {
-      color: #0066cc;
     }
 
     .nav-links {
@@ -263,13 +250,35 @@
     }
 
     .hero-image {
-      background: #f0f4f9;
+      background: #f8fafc;
       border-radius: 30px;
       height: 400px;
       display: flex;
       align-items: center;
       justify-content: center;
       color: #3a4a5e;
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 3rem;
+      line-height: 1.2;
+      text-align: center;
+    }
+
+    .hero-image div {
+      background: linear-gradient(135deg, #0a1a2e, #005f7a);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-image span {
+      display: block;
+      font-size: 4rem;
+    }
+
+    .hero-image small {
+      font-size: 1.2rem;
+      letter-spacing: 4px;
     }
 
     /* work page */
@@ -318,6 +327,7 @@
     .contact-info h3 {
       font-size: 1.8rem;
       margin-bottom: 1.5rem;
+      color: #0a1a2e;
     }
 
     .contact-info p {
@@ -329,7 +339,7 @@
     }
 
     .contact-info i {
-      color: #0066cc;
+      color: #005f7a;
       width: 24px;
       font-size: 1.2rem;
     }
@@ -341,7 +351,7 @@
     }
 
     .contact-info a:hover {
-      color: #0066cc;
+      color: #005f7a;
     }
 
     .whatsapp-link {
@@ -378,11 +388,11 @@
     .contact-form input:focus,
     .contact-form textarea:focus {
       outline: none;
-      border-color: #0066cc;
+      border-color: #005f7a;
     }
 
     .contact-form button {
-      background: #0066cc;
+      background: #0a1a2e;
       color: white;
       border: none;
       padding: 1rem 2rem;
@@ -393,7 +403,7 @@
     }
 
     .contact-form button:hover {
-      background: #004c99;
+      background: #005f7a;
     }
 
     /* footer */
@@ -422,6 +432,7 @@
       nav { flex-direction: column; gap: 1rem; }
       .work-grid { grid-template-columns: 1fr; }
       h1 { font-size: 3rem; }
+      .hero-image span { font-size: 3rem; }
     }
   </style>
 </head>
@@ -430,8 +441,7 @@
 <header>
   <nav>
     <div class="logo-container">
-      <img src="logo.png" alt="MWM Technologies" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
-      <span class="logo-text" style="display: none;">MWM <span>technologies</span></span>
+      <img src="logo.png" alt="MWM Technologies" class="logo-img">
     </div>
     <div class="nav-links">
       <a href="#" data-page="home">home</a>
@@ -448,12 +458,15 @@
     <div class="container">
       <div class="hero">
         <div>
-          <h1>digital <span>infrastructure</span></h1>
+          <h1>digital <span style="color: #005f7a;">infrastructure</span></h1>
           <p>Websites · applications · systems — built for performance, scale, and longevity.</p>
-          <a href="#" data-page="work" class="btn">see work</a>
+          <a href="#" data-page="work" class="btn" style="background: #0a1a2e;">see work</a>
         </div>
         <div class="hero-image">
-          <span>MWM</span>
+          <div>
+            <span>MWM</span>
+            <small>TECHNOLOGIES</small>
+          </div>
         </div>
       </div>
     </div>
@@ -462,18 +475,18 @@
   <!-- work -->
   <div id="work" class="page">
     <div class="container">
-      <h1 style="font-size: 3rem; margin-bottom: 2rem;">selected <span style="color: #0066cc;">work</span></h1>
+      <h1 style="font-size: 3rem; margin-bottom: 2rem;">selected <span style="color: #005f7a;">work</span></h1>
       <div class="work-grid">
         <div class="work-card">
-          <h3>project name</h3>
+          <h3 style="color: #0a1a2e;">project name</h3>
           <p>—</p>
         </div>
         <div class="work-card">
-          <h3>project name</h3>
+          <h3 style="color: #0a1a2e;">project name</h3>
           <p>—</p>
         </div>
         <div class="work-card">
-          <h3>project name</h3>
+          <h3 style="color: #0a1a2e;">project name</h3>
           <p>—</p>
         </div>
       </div>
@@ -484,34 +497,34 @@
   <div id="about" class="page">
     <div class="container">
       <div class="about-header">
-        <h1>about <span>mwm</span></h1>
+        <h1>about <span style="color: #005f7a;">mwm</span></h1>
       </div>
       
       <div class="about-grid">
         <div class="founder-section">
           <img src="ar.png" alt="Ailwei Maduna Wa Malada" class="founder-image" onerror="this.style.display='none';">
           <div class="founder-name">Ailwei Maduna Wa Malada</div>
-          <div class="founder-title">founder</div>
+          <div class="founder-title" style="color: #005f7a;">founder</div>
           
           <div class="surname-block">
             <div class="surname-item">
-              <div class="surname-label">maduna</div>
+              <div class="surname-label" style="color: #005f7a;">maduna</div>
               <div class="surname-meaning">my mother's surname</div>
             </div>
             <div class="surname-item">
-              <div class="surname-label">malada</div>
+              <div class="surname-label" style="color: #005f7a;">malada</div>
               <div class="surname-meaning">my father's surname</div>
             </div>
           </div>
           
           <div class="focus-block">
-            <h3>current focus</h3>
+            <h3 style="color: #0a1a2e;">current focus</h3>
             <p>website development — custom builds, clean code, no templates</p>
           </div>
         </div>
         
         <div class="company-section">
-          <h2>founded 2006</h2>
+          <h2 style="color: #0a1a2e;">founded 2006</h2>
           <p>privately held · headquartered johannesburg</p>
           <p style="margin-top: 2rem; color: #1e2b3a;">building digital infrastructure for enterprise, government, and industry.</p>
         </div>
@@ -522,7 +535,7 @@
   <!-- contact – with your contact details -->
   <div id="contact" class="page">
     <div class="container">
-      <h1 style="font-size: 3rem; margin-bottom: 2rem;">get in <span style="color: #0066cc;">touch</span></h1>
+      <h1 style="font-size: 3rem; margin-bottom: 2rem;">get in <span style="color: #005f7a;">touch</span></h1>
       <div class="contact-grid">
         <div class="contact-info">
           <h3>mwm technologies</h3>
@@ -554,22 +567,6 @@
 </footer>
 
 <script>
-  // handle image fallback
-  window.addEventListener('load', function() {
-    const logoImg = document.querySelector('.logo-img');
-    const logoText = document.querySelector('.logo-text');
-    
-    if (logoImg && logoImg.naturalWidth === 0) {
-      logoImg.style.display = 'none';
-      if (logoText) logoText.style.display = 'block';
-    }
-    
-    const founderImg = document.querySelector('.founder-image');
-    if (founderImg && founderImg.naturalWidth === 0) {
-      founderImg.style.display = 'none';
-    }
-  });
-
   // navigation
   const pages = {
     home: document.getElementById('home'),
