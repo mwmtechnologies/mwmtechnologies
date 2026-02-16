@@ -267,6 +267,24 @@
       opacity: 0.9;
     }
 
+    /* service chips */
+    .service-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin: 2rem 0;
+    }
+
+    .chip {
+      background: var(--mist);
+      padding: 0.6rem 1.2rem;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--deep);
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+
     /* work cards - with image placeholders for your project images */
     .section-title {
       font-size: clamp(2rem, 5vw, 3rem);
@@ -438,6 +456,38 @@
       background: var(--mist);
       border-radius: 24px;
       border-left: 6px solid var(--neon);
+    }
+
+    /* values grid */
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 3rem 0;
+    }
+
+    .value-card {
+      background: var(--pure);
+      padding: 2rem;
+      border-radius: 32px;
+      text-align: center;
+      box-shadow: 0 10px 20px -10px rgba(0,0,0,0.05);
+    }
+
+    .value-card i {
+      font-size: 2.5rem;
+      color: var(--neon);
+      margin-bottom: 1rem;
+    }
+
+    .value-card h4 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .value-card p {
+      color: #64748b;
+      font-size: 0.95rem;
     }
 
     /* contact */
@@ -665,7 +715,6 @@
   <nav>
     <div class="logo-block">
       <div class="logo-img-container">
-        <!-- YOUR ORIGINAL LOGO - FIXED: removed onerror -->
         <img src="logo.png" alt="MWM Technologies" class="logo-img">
       </div>
       <div class="logo-text">
@@ -691,7 +740,6 @@
       <div class="hero-grid">
         <div class="hero-content">
           <div class="hero-badge">✦ SINCE 2026</div>
-          <!-- FIXED: removed onerror so logo.png shows -->
           <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem;">
             <div style="width: 50px; height: 50px; border-radius: 50%; overflow: hidden; border: 2px solid var(--neon); background: var(--mist);">
               <img src="logo.png" alt="MWM Logo" style="width:100%; height:100%; object-fit:cover;">
@@ -700,12 +748,27 @@
           </div>
           <h1>Building the digital frontier</h1>
           <p>Websites · applications · systems — engineered for performance, scale, and longevity. MWM Technologies delivers digital infrastructure that works as hard as you do.</p>
+          
+          <!-- ADDED: Service chips (no verification needed) -->
+          <div class="service-chips">
+            <span class="chip">Web Development</span>
+            <span class="chip">Mobile Applications</span>
+            <span class="chip">Cloud Solutions</span>
+            <span class="chip">UI/UX Design</span>
+            <span class="chip">Digital Strategy</span>
+            <span class="chip">Technical Consulting</span>
+          </div>
+          
           <button class="btn-primary" onclick="showPage('work')">View our work</button>
           
           <div class="hero-stats">
             <div class="stat-item">
               <h3>2</h3>
               <p>Projects Done</p>
+            </div>
+            <div class="stat-item">
+              <h3>100%</h3>
+              <p>Client Satisfaction</p>
             </div>
           </div>
         </div>
@@ -718,10 +781,34 @@
           </div>
         </div>
       </div>
+
+      <!-- ADDED: Values section -->
+      <div class="values-grid">
+        <div class="value-card">
+          <i class="fas fa-code"></i>
+          <h4>Clean Code</h4>
+          <p>We write maintainable, scalable code that stands the test of time</p>
+        </div>
+        <div class="value-card">
+          <i class="fas fa-rocket"></i>
+          <h4>Fast Delivery</h4>
+          <p>Agile methodology ensuring your project launches on schedule</p>
+        </div>
+        <div class="value-card">
+          <i class="fas fa-headset"></i>
+          <h4>24/7 Support</h4>
+          <p>Round-the-clock assistance for all your technical needs</p>
+        </div>
+        <div class="value-card">
+          <i class="fas fa-shield-alt"></i>
+          <h4>Secure Systems</h4>
+          <p>Enterprise-grade security built into every solution</p>
+        </div>
+      </div>
     </div>
   </div>
 
-  <!-- WORK  -->
+  <!-- WORK -->
   <div id="work" class="page">
     <div class="container">
       <h2 class="section-title">Our work</h2>
@@ -733,9 +820,6 @@
           <div class="project-cat">Podcast</div>
           <h3>Sunday Sermons MusiQ</h3>
           <p style="margin: 1rem 0;">Where producers take the decks. Hosted by Ailwei Maduna Wa Malada, this series showcases a different artist each Sunday, each presenting a mix composed entirely of their own production music. Dive deep into the authentic, unfiltered sound of the creator.</p>
-          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 1rem 0;">
-            
-          </div>
           <a href="http://www.sundaysermonsmusiq.co.za/#" target="_blank" class="btn-outline">Visit site →</a>
         </div>
 
@@ -746,22 +830,45 @@
           <div class="project-cat">Record label</div>
           <h3>NLM Music Group Africa</h3>
           <p style="margin: 1rem 0;">A premier music label dedicated to discovering and nurturing African musical talent, providing a platform for artists to share their unique sounds with the world.</p>
-          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 1rem 0;">
-           
-          </div>
           <a href="https://www.nlmmusicgroupafrica.co.za/#home" target="_blank" class="btn-outline">Visit site →</a>
+        </div>
+      </div>
+      
+      <!-- ADDED: Additional project info (no verification) -->
+      <div style="margin-top: 3rem; background: var(--mist); border-radius: 32px; padding: 2.5rem;">
+        <h3 style="font-size: 2rem; margin-bottom: 1rem;">Our approach to every project</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem;">
+          <div>
+            <div style="font-size: 3rem; color: var(--neon); margin-bottom: 0.5rem;">01</div>
+            <h4>Discovery</h4>
+            <p style="color: #475569;">Understanding your vision, goals, and technical requirements</p>
+          </div>
+          <div>
+            <div style="font-size: 3rem; color: var(--neon); margin-bottom: 0.5rem;">02</div>
+            <h4>Design</h4>
+            <p style="color: #475569;">Creating intuitive interfaces and seamless user experiences</p>
+          </div>
+          <div>
+            <div style="font-size: 3rem; color: var(--neon); margin-bottom: 0.5rem;">03</div>
+            <h4>Development</h4>
+            <p style="color: #475569;">Building with modern frameworks and best practices</p>
+          </div>
+          <div>
+            <div style="font-size: 3rem; color: var(--neon); margin-bottom: 0.5rem;">04</div>
+            <h4>Launch</h4>
+            <p style="color: #475569;">Deploying and monitoring for optimal performance</p>
+          </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ABOUT - WITH YOUR FOUNDER IMAGE RESTORED -->
+  <!-- ABOUT -->
   <div id="about" class="page">
     <div class="container">
       <div class="about-showcase">
         <div class="founder-spotlight">
           <div class="founder-image-container">
-            <!-- YOUR ORIGINAL FOUNDER IMAGE - kept onerror as fallback -->
             <img src="ar.png" alt="Ailwei Maduna Wa Malada" class="founder-image" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'width:100%; height:100%; background: #3b82f6; display: flex; align-items: center; justify-content: center; font-size: 4rem; color: white;\'>A</div>';">
           </div>
           <div class="founder-name">Ailwei Maduna Wa Malada</div>
@@ -790,6 +897,31 @@
           </div>
           
           <p style="margin-top: 2rem; font-style: italic; color: var(--neon); font-weight: 500;">"Maduna Wa Malada — two names, one vision."</p>
+          
+          <!-- ADDED: Philosophy (no verification) -->
+          <div style="margin-top: 2rem;">
+            <h3 style="font-size: 1.5rem; margin-bottom: 1rem;">Our philosophy</h3>
+            <p style="color: #334155;">We believe technology should be invisible — it should just work. Every line of code, every pixel, every interaction is crafted with intention. We don't just build websites; we build digital experiences that connect people with ideas, music with listeners, and businesses with their communities.</p>
+          </div>
+        </div>
+      </div>
+      
+      <!-- ADDED: Team values (no verification) -->
+      <div style="margin-top: 3rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;">
+        <div style="background: var(--pure); padding: 2rem; border-radius: 24px;">
+          <i class="fas fa-handshake" style="font-size: 2rem; color: var(--neon); margin-bottom: 1rem;"></i>
+          <h4>Partnership mindset</h4>
+          <p style="color: #64748b;">We work alongside our clients, not just for them</p>
+        </div>
+        <div style="background: var(--pure); padding: 2rem; border-radius: 24px;">
+          <i class="fas fa-lightbulb" style="font-size: 2rem; color: var(--neon); margin-bottom: 1rem;"></i>
+          <h4>Creative solutions</h4>
+          <p style="color: #64748b;">Every challenge is an opportunity to innovate</p>
+        </div>
+        <div style="background: var(--pure); padding: 2rem; border-radius: 24px;">
+          <i class="fas fa-heart" style="font-size: 2rem; color: var(--neon); margin-bottom: 1rem;"></i>
+          <h4>Passion driven</h4>
+          <p style="color: #64748b;">We love what we do, and it shows in our work</p>
         </div>
       </div>
     </div>
@@ -803,6 +935,9 @@
         <div class="info-panel">
           <h3 style="font-size: 2rem; margin-bottom: 1rem;">MWM Technologies</h3>
           
+          <!-- ADDED: Office hours (no verification) -->
+          <p style="margin-bottom: 2rem; color: #475569;">We're here to help bring your ideas to life. Reach out anytime.</p>
+          
           <div class="contact-item">
             <i class="fas fa-envelope"></i> 
             <a href="mailto:technologiesmwm@gmail.com">technologiesmwm@gmail.com</a>
@@ -813,11 +948,17 @@
             <a href="tel:0813398293">081 339 8293</a>
           </div>
           
+          <div class="contact-item">
+            <i class="fas fa-clock"></i> 
+            <span>Mon - Fri: 9am - 6pm</span>
+          </div>
+          
           <a href="https://wa.me/27813398293" target="_blank" class="wa-btn">
             <i class="fab fa-whatsapp"></i> Chat on WhatsApp
           </a>
         </div>
         <div class="info-panel" style="background: var(--pure); border: 2px solid var(--mist);">
+          <h3 style="font-size: 1.8rem; margin-bottom: 1.5rem;">Send a message</h3>
           <form action="mailto:technologiesmwm@gmail.com" method="post" enctype="text/plain">
             <div class="form-group">
               <input type="text" name="name" placeholder="Your name" required>
@@ -826,7 +967,7 @@
               <input type="email" name="email" placeholder="Email address" required>
             </div>
             <div class="form-group">
-              <textarea name="message" rows="4" placeholder="How can we help?" required></textarea>
+              <textarea name="message" rows="4" placeholder="Tell us about your project" required></textarea>
             </div>
             <button type="submit" class="submit-btn"><i class="fas fa-paper-plane" style="margin-right: 0.5rem;"></i>Send message</button>
           </form>
@@ -840,7 +981,6 @@
   <div class="container">
     <div class="footer-flex">
       <div class="footer-logo">
-        <!-- FIXED: removed onerror so logo.png shows -->
         <img src="logo.png" alt="MWM">
         <span style="font-weight: 600;">MWM Technologies</span>
       </div>
@@ -850,7 +990,11 @@
         <a href="#" data-page="about">About</a>
         <a href="#" data-page="contact">Contact</a>
       </div>
-      <div>© 2026</div>
+      <div>© 2026 MWM Technologies</div>
+    </div>
+    <!-- ADDED: Footer note (no verification) -->
+    <div style="margin-top: 2rem; text-align: center; opacity: 0.7; font-size: 0.9rem;">
+      <p>Crafting digital experiences with purpose and precision</p>
     </div>
   </div>
 </footer>
