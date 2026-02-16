@@ -769,9 +769,7 @@
       <div class="hero-grid">
         <div class="hero-content">
           <div class="hero-badge">✦ SINCE 2026</div>
-          <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem;">
-            <div style="width: 50px; height: 50px; border-radius: 50%; overflow: hidden; border: 2px solid var(--neon); background: var(--mist);">
-            
+          <!-- REMOVED the unfinished inline div that was breaking layout -->
           <h1>Building the digital frontier</h1>
           <p>Websites · applications · systems — engineered for performance, scale, and longevity. MWM Technologies delivers digital infrastructure that works as hard as you do.</p>
           
@@ -784,7 +782,7 @@
             <span class="chip">Technical Consulting</span>
           </div>
           
-          <button class="btn-primary" onclick="showPage('Website Development')">View our Website Development</button>
+          <button class="btn-primary" id="viewWorkBtn">View our Website Development</button>
           
           <div class="hero-stats">
             <div class="stat-item">
@@ -837,8 +835,8 @@
     </div>
   </div>
 
-  <!-- Website Development -->
-  <div id="Website Development" class="page">
+  <!-- Website Development (work) -->
+  <div id="work" class="page">
     <div class="container">
       <h2 class="section-title">Website Development</h2>
       <div class="work-grid">
@@ -982,7 +980,25 @@
             <i class="fab fa-whatsapp"></i> Chat on WhatsApp
           </a>
         </div>
-       
+        <!-- ========== FIX: form section was completely missing. Added proper form panel ========= -->
+        <div class="info-panel" style="background: var(--pure); border: 2px solid var(--mist);">
+          <h3 style="font-size: 2rem; margin-bottom: 1rem;">Send us a message</h3>
+          <form id="contactForm">
+            <div class="form-group">
+              <input type="text" placeholder="Your name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" placeholder="Email address" required>
+            </div>
+            <div class="form-group">
+              <textarea rows="4" placeholder="How can we help?"></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
 </main>
 
 <footer>
@@ -1046,10 +1062,16 @@
   // ensure home active if none
   if (!document.querySelector('.page.active')) showPage('home');
 
-  // work button
-  document.querySelector('.btn-primary')?.addEventListener('click', (e) => {
+  // work button on home page
+  document.getElementById('viewWorkBtn')?.addEventListener('click', (e) => {
     e.preventDefault();
     showPage('work');
+  });
+
+  // basic contact form alert (prevents page reload)
+  document.getElementById('contactForm')?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    alert('Thank you for reaching out. We will get back to you soon.');
   });
 </script>
 
