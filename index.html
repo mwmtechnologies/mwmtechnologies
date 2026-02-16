@@ -256,6 +256,7 @@
       line-height: 1.2;
       position: relative;
       z-index: 2;
+      width: 100%;
     }
 
     .hero-quote span {
@@ -265,6 +266,24 @@
       font-weight: 400;
       margin-top: 1rem;
       opacity: 0.9;
+    }
+
+    /* Logo in blue box */
+    .hero-logo-container {
+      width: 100px;
+      height: 100px;
+      border-radius: 24px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+      background: var(--mist);
+      border: 3px solid var(--neon);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    .hero-logo-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     /* service chips */
@@ -734,7 +753,7 @@
 </header>
 
 <main>
-  <!-- HOME -->
+  <!-- HOME - FIXED: logo.png removed from text, added to blue box -->
   <div id="home" class="page active">
     <div class="container">
       <div class="hero-grid">
@@ -775,7 +794,10 @@
         
         <div class="hero-visual">
           <div class="hero-quote">
-            logo.png
+            <!-- FIXED: logo.png removed from text, added as image above -->
+            <div class="hero-logo-container">
+              <img src="logo.png" alt="MWM Logo">
+            </div>
             “Maduna Wa Malada”
             <span>two names, one vision</span>
           </div>
