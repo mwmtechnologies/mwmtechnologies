@@ -561,7 +561,6 @@
     .footer-logo img {
       height: 50px;
       width: auto;
-      filter: brightness(0) invert(1);
     }
 
     .footer-links {
@@ -666,8 +665,8 @@
   <nav>
     <div class="logo-block">
       <div class="logo-img-container">
-        <!-- YOUR ORIGINAL LOGO RESTORED -->
-        <img src="logo.png" alt="MWM Technologies" class="logo-img" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2270%22%20height%3D%2270%22%20viewBox%3D%220%200%20100%20100%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20fill%3D%22%233b82f6%22%20rx%3D%2220%22%2F%3E%3Ctext%20x%3D%2218%22%20y%3D%2268%22%20font-size%3D%2242%22%20fill%3D%22white%22%20font-family%3D%22Arial%22%3EMWM%3C%2Ftext%3E%3C%2Fsvg%3E';">
+        <!-- YOUR ORIGINAL LOGO - FIXED: removed onerror -->
+        <img src="logo.png" alt="MWM Technologies" class="logo-img">
       </div>
       <div class="logo-text">
         MWM Technologies <small>est.2026</small>
@@ -692,11 +691,10 @@
       <div class="hero-grid">
         <div class="hero-content">
           <div class="hero-badge">✦ SINCE 2026</div>
-          <!-- **** LOGO ADDED ABOVE Ailwei Maduna Wa Malada as requested **** -->
+          <!-- FIXED: removed onerror so logo.png shows -->
           <div style="display: flex; align-items: center; gap: 0.8rem; margin-bottom: 1rem;">
-            <!-- Logo added here above the name -->
             <div style="width: 50px; height: 50px; border-radius: 50%; overflow: hidden; border: 2px solid var(--neon); background: var(--mist);">
-              <img src="logo.png" alt="MWM Logo" style="width:100%; height:100%; object-fit:cover;" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-crown\' style=\'font-size: 1.5rem; color: var(--neon); width:100%; height:100%; display:flex; align-items:center; justify-content:center;\'></i>';">
+              <img src="logo.png" alt="MWM Logo" style="width:100%; height:100%; object-fit:cover;">
             </div>
             <span style="font-weight: 600; color: var(--deep);">Ailwei Maduna Wa Malada</span>
           </div>
@@ -763,7 +761,7 @@
       <div class="about-showcase">
         <div class="founder-spotlight">
           <div class="founder-image-container">
-            <!-- YOUR ORIGINAL FOUNDER IMAGE RESTORED -->
+            <!-- YOUR ORIGINAL FOUNDER IMAGE - kept onerror as fallback -->
             <img src="ar.png" alt="Ailwei Maduna Wa Malada" class="founder-image" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'width:100%; height:100%; background: #3b82f6; display: flex; align-items: center; justify-content: center; font-size: 4rem; color: white;\'>A</div>';">
           </div>
           <div class="founder-name">Ailwei Maduna Wa Malada</div>
@@ -797,7 +795,7 @@
     </div>
   </div>
 
-  <!-- CONTACT (fixed broken part) -->
+  <!-- CONTACT -->
   <div id="contact" class="page">
     <div class="container">
       <h2 class="section-title">Get in touch</h2>
@@ -819,7 +817,6 @@
             <i class="fab fa-whatsapp"></i> Chat on WhatsApp
           </a>
         </div>
-        <!-- **** FIXED: properly closed contact-modern div and added contact form **** -->
         <div class="info-panel" style="background: var(--pure); border: 2px solid var(--mist);">
           <form action="mailto:technologiesmwm@gmail.com" method="post" enctype="text/plain">
             <div class="form-group">
@@ -834,16 +831,17 @@
             <button type="submit" class="submit-btn"><i class="fas fa-paper-plane" style="margin-right: 0.5rem;"></i>Send message</button>
           </form>
         </div>
-      </div> <!-- closing contact-modern -->
-    </div> <!-- closing container -->
-  </div> <!-- closing contact page -->
+      </div>
+    </div>
+  </div>
 </main>
 
 <footer>
   <div class="container">
     <div class="footer-flex">
       <div class="footer-logo">
-        <img src="logo.png" alt="MWM" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2250%22%20height%3D%2250%22%20viewBox%3D%220%200%20100%20100%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20fill%3D%22white%22%20rx%3D%2220%22%2F%3E%3Ctext%20x%3D%2218%22%20y%3D%2268%22%20font-size%3D%2242%22%20fill%3D%22%230b1120%22%3EMWM%3C%2Ftext%3E%3C%2Fsvg%3E';">
+        <!-- FIXED: removed onerror so logo.png shows -->
+        <img src="logo.png" alt="MWM">
         <span style="font-weight: 600;">MWM Technologies</span>
       </div>
       <div class="footer-links">
@@ -902,9 +900,6 @@
     e.preventDefault();
     showPage('work');
   });
-
-  // handle form submission (mailto)
-  // (no extra code needed, form works natively)
 </script>
 
 </body>
