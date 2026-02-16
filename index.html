@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
-  <title>MWM · reimagined</title>
+  <title>MWM Technologies · fresh</title>
   <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <!-- Google Font: Outfit (clean, modern) -->
@@ -31,7 +31,7 @@
       --neon-glow: #60a5fa;
       --mist: #f1f5f9;
       --pure: #ffffff;
-      --accent: #f97316; /* subtle orange accent */
+      --accent: #f97316;
     }
 
     /* typography */
@@ -52,7 +52,7 @@
       padding: 0 1.5rem;
     }
 
-    /* completely new header - minimal, bold logo */
+    /* header */
     header {
       background: var(--pure);
       border-bottom: 1px solid rgba(0,0,0,0.03);
@@ -71,30 +71,27 @@
       margin: 0 auto;
     }
 
-    /* BIG, BOLD LOGO - completely different treatment */
+    /* BIG, BOLD LOGO with your actual logo image */
     .logo-block {
       display: flex;
       align-items: center;
       gap: 1rem;
     }
 
-    .logo-mark {
-      width: 56px;
-      height: 56px;
-      background: linear-gradient(145deg, var(--deep), var(--ink));
-      border-radius: 18px;
+    .logo-img-container {
+      width: 70px;
+      height: 70px;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 10px 15px -5px rgba(59,130,246,0.3);
     }
 
-    .logo-mark span {
-      color: white;
-      font-size: 2rem;
-      font-weight: 800;
-      letter-spacing: -0.05em;
-      transform: scale(1.1);
+    .logo-img {
+      max-width: 100%;
+      max-height: 70px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
     }
 
     .logo-text {
@@ -115,7 +112,7 @@
       margin-left: 0.3rem;
     }
 
-    /* mobile-first navigation */
+    /* mobile navigation */
     .nav-toggle {
       display: none;
       background: none;
@@ -265,7 +262,7 @@
       opacity: 0.9;
     }
 
-    /* work cards - fresh look */
+    /* work cards - with image placeholders for your project images */
     .section-title {
       font-size: clamp(2rem, 5vw, 3rem);
       margin-bottom: 3rem;
@@ -304,17 +301,24 @@
       box-shadow: 0 25px 35px -12px var(--neon-glow);
     }
 
-    .card-media {
+    .project-image {
       width: 100%;
-      height: 180px;
+      height: 200px;
       background: var(--mist);
       border-radius: 24px;
       margin-bottom: 1.8rem;
+      overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--neon);
-      font-size: 3rem;
+      color: #94a3b8;
+      font-style: italic;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
 
     .project-cat {
@@ -330,7 +334,7 @@
       margin: 0.5rem 0 1rem;
     }
 
-    /* about page - fresh */
+    /* about page - with your founder image */
     .about-showcase {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -348,29 +352,33 @@
       color: white;
     }
 
-    .founder-avatar {
-      width: 140px;
-      height: 140px;
-      background: var(--neon);
+    .founder-image-container {
+      width: 160px;
+      height: 160px;
       border-radius: 50%;
       margin-bottom: 2rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 4rem;
-      font-weight: 800;
-      color: var(--deep);
-      border: 4px solid white;
+      overflow: hidden;
+      border: 4px solid var(--neon);
+      background: var(--mist);
     }
 
-    .founder-avatar span {
-      background: white;
+    .founder-image {
       width: 100%;
       height: 100%;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      object-fit: cover;
+    }
+
+    .founder-name {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+
+    .founder-title {
+      color: var(--neon);
+      font-size: 1.1rem;
+      margin-bottom: 2rem;
+      opacity: 0.9;
     }
 
     .name-rows {
@@ -392,6 +400,39 @@
       color: var(--neon);
       font-weight: 700;
       font-size: 1.2rem;
+    }
+
+    .focus-badge {
+      display: inline-block;
+      background: var(--neon);
+      color: var(--deep);
+      padding: 0.5rem 1.5rem;
+      border-radius: 40px;
+      font-weight: 700;
+      margin-top: 1.5rem;
+    }
+
+    .company-info {
+      padding: 2rem;
+    }
+
+    .company-info h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .company-info p {
+      font-size: 1.2rem;
+      color: #334155;
+      line-height: 1.7;
+    }
+
+    .founding-stat {
+      margin-top: 2rem;
+      padding: 1.5rem;
+      background: var(--mist);
+      border-radius: 24px;
+      border-left: 6px solid var(--neon);
     }
 
     /* contact */
@@ -422,6 +463,12 @@
       width: 32px;
       color: var(--neon);
       font-size: 1.5rem;
+    }
+
+    .contact-item a {
+      color: var(--deep);
+      text-decoration: none;
+      word-break: break-word;
     }
 
     .wa-btn {
@@ -479,19 +526,29 @@
       gap: 1rem;
     }
 
-    .footer-mark {
-      width: 48px;
-      height: 48px;
-      background: var(--neon);
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 800;
-      font-size: 1.6rem;
+    .footer-logo img {
+      height: 50px;
+      width: auto;
+      filter: brightness(0) invert(1);
     }
 
-    /* RESPONSIVE - phone first */
+    .footer-links {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .footer-links a {
+      color: white;
+      text-decoration: none;
+      opacity: 0.8;
+      transition: 0.2s;
+    }
+
+    .footer-links a:hover {
+      opacity: 1;
+    }
+
+    /* RESPONSIVE */
     @media (max-width: 900px) {
       .hero-grid,
       .about-showcase,
@@ -543,13 +600,13 @@
     }
 
     @media (max-width: 480px) {
-      .logo-mark {
-        width: 48px;
-        height: 48px;
+      .logo-img-container {
+        width: 60px;
+        height: 60px;
       }
-
-      .logo-mark span {
-        font-size: 1.8rem;
+      
+      .logo-img {
+        max-height: 60px;
       }
 
       .logo-text {
@@ -564,11 +621,10 @@
         width: 100%;
         text-align: center;
       }
-    }
 
-    /* simple mobile menu toggle */
-    .show {
-      display: flex !important;
+      .name-rows {
+        flex-direction: column;
+      }
     }
   </style>
 </head>
@@ -577,8 +633,9 @@
 <header>
   <nav>
     <div class="logo-block">
-      <div class="logo-mark">
-        <span>MWM</span>
+      <div class="logo-img-container">
+        <!-- YOUR ORIGINAL LOGO RESTORED -->
+        <img src="logo.png" alt="MWM Technologies" class="logo-img" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2270%22%20height%3D%2270%22%20viewBox%3D%220%200%20100%20100%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20fill%3D%22%233b82f6%22%20rx%3D%2220%22%2F%3E%3Ctext%20x%3D%2218%22%20y%3D%2268%22%20font-size%3D%2242%22%20fill%3D%22white%22%20font-family%3D%22Arial%22%3EMWM%3C%2Ftext%3E%3C%2Fsvg%3E';">
       </div>
       <div class="logo-text">
         technologies <small>est.2006</small>
@@ -603,9 +660,9 @@
       <div class="hero-grid">
         <div class="hero-content">
           <div class="hero-badge">✦ SINCE 2006</div>
-          <h1>Where code meets conviction</h1>
-          <p>We build digital infrastructure that lasts — websites, applications, and systems for the ambitious.</p>
-          <button class="btn-primary" onclick="showPage('work')">See our work</button>
+          <h1>Building the digital frontier</h1>
+          <p>Websites · applications · systems — engineered for performance, scale, and longevity. MWM Technologies delivers digital infrastructure that works as hard as you do.</p>
+          <button class="btn-primary" onclick="showPage('work')">View our work</button>
           
           <div class="hero-stats">
             <div class="stat-item">
@@ -629,61 +686,81 @@
     </div>
   </div>
 
-  <!-- WORK -->
+  <!-- WORK - WITH YOUR PROJECT IMAGES RESTORED -->
   <div id="work" class="page">
     <div class="container">
-      <h2 class="section-title">Selected work</h2>
+      <h2 class="section-title">Our work</h2>
       <div class="work-grid">
         <div class="project-card">
-          <div class="card-media">
-            <i class="fas fa-headphones"></i>
+          <div class="project-image">
+            <!-- Project image placeholder - you can replace with actual project screenshots -->
+            <img src="sunday-sermons.jpg" alt="Sunday Sermons MusiQ" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-music\' style=\'font-size: 3rem; color: #3b82f6;\'></i><span style=\'margin-left: 0.5rem;\'>Sunday Sermons</span>';">
           </div>
-          <div class="project-cat">Music</div>
+          <div class="project-cat">Music label</div>
           <h3>Sunday Sermons MusiQ</h3>
-          <p style="margin: 1rem 0;">Artist discovery, integrated player, merch store.</p>
-          <a href="#" class="btn-outline" onclick="alert('case study preview'); return false;">View project →</a>
+          <p style="margin: 1rem 0;">Custom website for a gospel and inspirational music label. Features artist profiles, music player integration, event listings, and online store.</p>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 1rem 0;">
+            <span style="background: var(--mist); padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.9rem;">HTML/CSS</span>
+            <span style="background: var(--mist); padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.9rem;">JavaScript</span>
+            <span style="background: var(--mist); padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.9rem;">Music player</span>
+          </div>
+          <a href="#" class="btn-outline" onclick="alert('Website coming soon'); return false;">Visit site →</a>
         </div>
 
         <div class="project-card">
-          <div class="card-media">
-            <i class="fas fa-microphone-alt"></i>
+          <div class="project-image">
+            <!-- Project image placeholder -->
+            <img src="nlm-music.jpg" alt="NLM Music Group Africa" onerror="this.style.display='none'; this.parentElement.innerHTML='<i class=\'fas fa-record-vinyl\' style=\'font-size: 3rem; color: #3b82f6;\'></i><span>NLM Music</span>';">
           </div>
           <div class="project-cat">Record label</div>
           <h3>NLM Music Group Africa</h3>
-          <p style="margin: 1rem 0;">Full CMS, tour dates, press &amp; roster management.</p>
-          <a href="#" class="btn-outline" onclick="alert('case study preview'); return false;">View project →</a>
+          <p style="margin: 1rem 0;">Full-featured website for an African record label. Includes artist roster, music releases, tour dates, press kit, and fan engagement features.</p>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin: 1rem 0;">
+            <span style="background: var(--mist); padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.9rem;">Custom CMS</span>
+            <span style="background: var(--mist); padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.9rem;">E-commerce</span>
+            <span style="background: var(--mist); padding: 0.3rem 1rem; border-radius: 40px; font-size: 0.9rem;">Responsive</span>
+          </div>
+          <a href="#" class="btn-outline" onclick="alert('Website coming soon'); return false;">Visit site →</a>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- ABOUT -->
+  <!-- ABOUT - WITH YOUR FOUNDER IMAGE RESTORED -->
   <div id="about" class="page">
     <div class="container">
       <div class="about-showcase">
         <div class="founder-spotlight">
-          <div class="founder-avatar">
-            <span>A</span>
+          <div class="founder-image-container">
+            <!-- YOUR ORIGINAL FOUNDER IMAGE RESTORED -->
+            <img src="ar.png" alt="Ailwei Maduna Wa Malada" class="founder-image" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\'width:100%; height:100%; background: #3b82f6; display: flex; align-items: center; justify-content: center; font-size: 4rem; color: white;\'>A</div>';">
           </div>
-          <h2 style="color: white; font-size: 2.5rem;">Ailwei Maduna Wa Malada</h2>
-          <p style="opacity: 0.8; margin: 1rem 0 2rem;">Founder · principal engineer</p>
+          <div class="founder-name">Ailwei Maduna Wa Malada</div>
+          <div class="founder-title">FOUNDER</div>
           
           <div class="name-rows">
             <div class="name-tile">
               <div class="label">Maduna</div>
-              <div>mother's lineage</div>
+              <div>my mother's surname</div>
             </div>
             <div class="name-tile">
               <div class="label">Malada</div>
-              <div>father's lineage</div>
+              <div>my father's surname</div>
             </div>
           </div>
-          <div style="margin-top: 2rem; background: var(--neon); color: var(--deep); display: inline-block; padding: 0.5rem 1.5rem; border-radius: 40px; font-weight: 700;">Building since 2006</div>
+          
+          <div class="focus-badge">Currently focused on website development</div>
         </div>
         
-        <div style="padding: 2rem;">
-          <h2 style="font-size: 2.5rem; margin-bottom: 1.5rem;">MWM Technologies</h2>
-          <p style="font-size: 1.2rem; color: #334155;">Headquartered in Johannesburg, privately held, and proudly independent. We don't do templates — we craft digital tools that work as hard as you do.</p>
+        <div class="company-info">
+          <h2>MWM Technologies</h2>
+          <p>Founded 2006 · Privately held · Headquartered Johannesburg</p>
+          
+          <div class="founding-stat">
+            <p style="font-size: 1.1rem;">Building digital infrastructure for enterprise, government, and industry. Every line of code is written with purpose.</p>
+          </div>
+          
+          <p style="margin-top: 2rem; font-style: italic; color: var(--neon); font-weight: 500;">"Maduna Wa Malada — two names, one vision."</p>
         </div>
       </div>
     </div>
@@ -692,24 +769,32 @@
   <!-- CONTACT -->
   <div id="contact" class="page">
     <div class="container">
-      <h2 class="section-title">Reach out</h2>
+      <h2 class="section-title">Get in touch</h2>
       <div class="contact-modern">
         <div class="info-panel">
-          <h3 style="font-size: 2rem; margin-bottom: 1rem;">Let's talk</h3>
+          <h3 style="font-size: 2rem; margin-bottom: 1rem;">MWM Technologies</h3>
+          
           <div class="contact-item">
-            <i class="fas fa-envelope"></i> <a href="mailto:technologiesmwm@gmail.com" style="color: var(--deep); text-decoration: none;">technologiesmwm@gmail.com</a>
+            <i class="fas fa-envelope"></i> 
+            <a href="mailto:technologiesmwm@gmail.com">technologiesmwm@gmail.com</a>
           </div>
+          
           <div class="contact-item">
-            <i class="fas fa-phone"></i> <a href="tel:0813398293" style="color: var(--deep); text-decoration: none;">081 339 8293</a>
+            <i class="fas fa-phone-alt"></i> 
+            <a href="tel:0813398293">081 339 8293</a>
           </div>
-          <a href="https://wa.me/27813398293" class="wa-btn"><i class="fab fa-whatsapp"></i> WhatsApp direct</a>
+          
+          <a href="https://wa.me/27813398293" target="_blank" class="wa-btn">
+            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+          </a>
         </div>
         
         <div class="form-group">
-          <input type="text" placeholder="Your name">
-          <input type="email" placeholder="Email">
-          <textarea rows="4" placeholder="Tell us about your project"></textarea>
-          <button class="btn-primary" style="width: 100%;" onclick="alert('message received (demo)')">Send message</button>
+          <input type="text" placeholder="Your name" id="name">
+          <input type="email" placeholder="Email address" id="email">
+          <input type="text" placeholder="Company (optional)" id="company">
+          <textarea rows="5" placeholder="Tell us about your project" id="message"></textarea>
+          <button class="btn-primary" style="width: 100%;" onclick="alert('Thank you for your inquiry. We will respond within 24 hours.')">Send inquiry</button>
         </div>
       </div>
     </div>
@@ -720,13 +805,14 @@
   <div class="container">
     <div class="footer-flex">
       <div class="footer-logo">
-        <div class="footer-mark">M</div>
+        <img src="logo.png" alt="MWM" onerror="this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2250%22%20height%3D%2250%22%20viewBox%3D%220%200%20100%20100%22%3E%3Crect%20width%3D%22100%22%20height%3D%22100%22%20fill%3D%22white%22%20rx%3D%2220%22%2F%3E%3Ctext%20x%3D%2218%22%20y%3D%2268%22%20font-size%3D%2242%22%20fill%3D%22%230b1120%22%3EMWM%3C%2Ftext%3E%3C%2Fsvg%3E';">
         <span style="font-weight: 600;">MWM Technologies</span>
       </div>
-      <div style="display: flex; gap: 2rem;">
-        <a href="#" data-page="home" style="color: white; text-decoration: none;">Home</a>
-        <a href="#" data-page="work" style="color: white; text-decoration: none;">Work</a>
-        <a href="#" data-page="contact" style="color: white; text-decoration: none;">Contact</a>
+      <div class="footer-links">
+        <a href="#" data-page="home">Home</a>
+        <a href="#" data-page="work">Work</a>
+        <a href="#" data-page="about">About</a>
+        <a href="#" data-page="contact">Contact</a>
       </div>
       <div>© 2026</div>
     </div>
@@ -742,7 +828,7 @@
     contact: document.getElementById('contact')
   };
 
-  const navLinks = document.querySelectorAll('.nav-links a, footer a[data-page]');
+  const navLinks = document.querySelectorAll('.nav-links a, .footer-links a');
 
   function showPage(pageId) {
     Object.values(pages).forEach(p => p?.classList.remove('active'));
@@ -754,7 +840,7 @@
     });
 
     // close mobile menu if open
-    document.getElementById('navLinks').classList.remove('show');
+    document.getElementById('navLinks')?.classList.remove('show');
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
@@ -766,17 +852,25 @@
   });
 
   // mobile toggle
-  document.getElementById('menuToggle').addEventListener('click', () => {
+  document.getElementById('menuToggle')?.addEventListener('click', () => {
     document.getElementById('navLinks').classList.toggle('show');
   });
 
   // ensure home active if none
   if (!document.querySelector('.page.active')) showPage('home');
 
-  // work buttons
+  // work button
   document.querySelector('.btn-primary')?.addEventListener('click', (e) => {
     e.preventDefault();
     showPage('work');
+  });
+
+  // visit links
+  document.querySelectorAll('.btn-outline').forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      alert('Website coming soon');
+    });
   });
 </script>
 
