@@ -286,7 +286,7 @@
       object-fit: cover;
     }
 
-    /* --- redesigned name pill: M=Maduna W=Wa M=Malada more appealing --- */
+    /* --- redesigned name pills: NO EQUALS SIGNS, NO EMOJIS --- */
     .name-pill-grid {
       display: flex;
       flex-wrap: wrap;
@@ -307,21 +307,13 @@
       transition: 0.2s;
       display: inline-flex;
       align-items: center;
-      gap: 0.2rem;
+      gap: 0.5rem;
       letter-spacing: -0.01em;
-    }
-
-    .name-chip i {
-      color: var(--neon);
-      font-size: 1.3rem;
-      margin-right: 0.5rem;
-      opacity: 0.9;
     }
 
     .name-chip .first {
       color: white;
-      font-weight: 300;
-      margin-right: 0.2rem;
+      font-weight: 500;
     }
     .name-chip .second {
       color: var(--neon);
@@ -843,11 +835,11 @@
             <div class="hero-logo-container">
               <img src="logo.png" alt="MWM Logo">
             </div>
-            <!-- redesigned M=Maduna W=Wa M=Malada - more appealing block -->
+            <!-- REDESIGNED: NO EQUALS SIGNS, NO EMOJIS - just clean text -->
             <div class="name-pill-grid">
-              <div class="name-chip"><i class="fas fa-crown"></i><span class="first">M=</span><span class="second">Maduna</span><span class="third">matriarch</span></div>
-              <div class="name-chip"><i class="fas fa-link"></i><span class="first">W=</span><span class="second">Wa</span><span class="third">bridge</span></div>
-              <div class="name-chip"><i class="fas fa-shield"></i><span class="first">M=</span><span class="second">Malada</span><span class="third">patriarch</span></div>
+              <div class="name-chip"><span class="first">M</span><span class="second">Maduna</span><span class="third">mother's lineage</span></div>
+              <div class="name-chip"><span class="first">W</span><span class="second">Wa</span><span class="third">bridge</span></div>
+              <div class="name-chip"><span class="first">M</span><span class="second">Malada</span><span class="third">father's lineage</span></div>
             </div>
             <div class="heritage-line">
               <span class="heritage-tag"><i class="fas fa-tree"></i> mother's lineage</span>
