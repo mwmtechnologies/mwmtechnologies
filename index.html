@@ -286,6 +286,79 @@
       object-fit: cover;
     }
 
+    /* --- redesigned name pill: M=Maduna W=Wa M=Malada more appealing --- */
+    .name-pill-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1.8rem 0 0.5rem;
+      justify-content: flex-start;
+    }
+
+    .name-chip {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(4px);
+      padding: 0.7rem 1.8rem;
+      border-radius: 60px;
+      font-size: 1.4rem;
+      font-weight: 700;
+      border: 1px solid rgba(59,130,246,0.4);
+      box-shadow: 0 6px 14px rgba(0,20,80,0.3);
+      transition: 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.2rem;
+      letter-spacing: -0.01em;
+    }
+
+    .name-chip i {
+      color: var(--neon);
+      font-size: 1.3rem;
+      margin-right: 0.5rem;
+      opacity: 0.9;
+    }
+
+    .name-chip .first {
+      color: white;
+      font-weight: 300;
+      margin-right: 0.2rem;
+    }
+    .name-chip .second {
+      color: var(--neon);
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .name-chip .third {
+      color: #facc15;
+      font-weight: 500;
+      margin-left: 0.3rem;
+      font-size: 0.9rem;
+      background: rgba(0,0,0,0.4);
+      padding: 0.2rem 0.8rem;
+      border-radius: 40px;
+    }
+
+    .heritage-line {
+      display: flex;
+      gap: 0.5rem;
+      margin-top: 1rem;
+      flex-wrap: wrap;
+    }
+    .heritage-tag {
+      background: var(--neon);
+      color: var(--deep);
+      padding: 0.4rem 1.2rem;
+      border-radius: 40px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .heritage-tag i {
+      font-size: 1rem;
+    }
+
     /* service chips */
     .service-chips {
       display: flex;
@@ -509,7 +582,7 @@
       font-size: 0.95rem;
     }
 
-    /* contact */
+    /* contact - NO FORM, just contact info */
     .contact-modern {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -523,6 +596,7 @@
       background: var(--mist);
       border-radius: 36px;
       padding: 2.5rem;
+      grid-column: span 2; /* Make it take full width since we removed the form */
     }
 
     .contact-item {
@@ -566,42 +640,6 @@
     .wa-btn:hover {
       background: #128C7E;
       transform: translateY(-2px);
-    }
-
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 1.2rem;
-      border: 2px solid var(--mist);
-      border-radius: 24px;
-      font-size: 1rem;
-      margin-bottom: 1rem;
-      background: var(--mist);
-      transition: 0.2s;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: none;
-      border-color: var(--neon);
-      background: var(--pure);
-    }
-
-    .submit-btn {
-      background: var(--deep);
-      color: white;
-      border: none;
-      padding: 1.2rem 2rem;
-      border-radius: 50px;
-      font-weight: 600;
-      font-size: 1.1rem;
-      cursor: pointer;
-      transition: 0.2s;
-      width: 100%;
-    }
-
-    .submit-btn:hover {
-      background: var(--neon);
     }
 
     /* footer */
@@ -659,6 +697,10 @@
       .hero-visual {
         min-height: 280px;
         order: -1;
+      }
+      
+      .info-panel {
+        grid-column: span 1;
       }
     }
 
@@ -769,7 +811,6 @@
       <div class="hero-grid">
         <div class="hero-content">
           <div class="hero-badge">✦ SINCE 2026</div>
-          <!-- REMOVED the unfinished inline div that was breaking layout -->
           <h1>Building the digital frontier</h1>
           <p>Websites · applications · systems — engineered for performance, scale, and longevity. MWM Technologies delivers digital infrastructure that works as hard as you do.</p>
           
@@ -802,10 +843,17 @@
             <div class="hero-logo-container">
               <img src="logo.png" alt="MWM Logo">
             </div>
-            “M=Maduna
-             W=Wa
-             M=Malada”
-            <span>two names, one vision</span>
+            <!-- redesigned M=Maduna W=Wa M=Malada - more appealing block -->
+            <div class="name-pill-grid">
+              <div class="name-chip"><i class="fas fa-crown"></i><span class="first">M=</span><span class="second">Maduna</span><span class="third">matriarch</span></div>
+              <div class="name-chip"><i class="fas fa-link"></i><span class="first">W=</span><span class="second">Wa</span><span class="third">bridge</span></div>
+              <div class="name-chip"><i class="fas fa-shield"></i><span class="first">M=</span><span class="second">Malada</span><span class="third">patriarch</span></div>
+            </div>
+            <div class="heritage-line">
+              <span class="heritage-tag"><i class="fas fa-tree"></i> mother's lineage</span>
+              <span class="heritage-tag"><i class="fas fa-mountain"></i> father's lineage</span>
+            </div>
+            <span style="margin-top: 1rem; display: block; font-size: 1.1rem; opacity: 0.9;">two names, one vision</span>
           </div>
         </div>
       </div>
@@ -951,7 +999,7 @@
     </div>
   </div>
 
-  <!-- CONTACT -->
+  <!-- CONTACT - NO FORM, just contact info -->
   <div id="contact" class="page">
     <div class="container">
       <h2 class="section-title">Get in touch</h2>
@@ -980,7 +1028,9 @@
             <i class="fab fa-whatsapp"></i> Chat on WhatsApp
           </a>
         </div>
-   
+      </div>
+    </div>
+  </div>
 </main>
 
 <footer>
@@ -1048,12 +1098,6 @@
   document.getElementById('viewWorkBtn')?.addEventListener('click', (e) => {
     e.preventDefault();
     showPage('work');
-  });
-
-  // basic contact form alert (prevents page reload)
-  document.getElementById('contactForm')?.addEventListener('submit', (e) => {
-    e.preventDefault();
-    alert('Thank you for reaching out. We will get back to you soon.');
   });
 </script>
 
